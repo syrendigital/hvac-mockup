@@ -195,9 +195,9 @@
   }
 
   .lead-field input,
-  .lead-field select {
+  .lead-field select,
+  .lead-field textarea {
     width: 100%;
-    height: 48px;
     border: 1px solid #D8E1EA;
     border-radius: 8px;
     background: var(--white);
@@ -208,8 +208,20 @@
     transition: border-color 0.2s, box-shadow 0.2s;
   }
 
+  .lead-field input,
+  .lead-field select {
+    height: 48px;
+  }
+
+  .lead-field textarea {
+    min-height: 98px;
+    padding-top: 12px;
+    resize: vertical;
+  }
+
   .lead-field input:focus,
-  .lead-field select:focus {
+  .lead-field select:focus,
+  .lead-field textarea:focus {
     border-color: var(--blue-accent);
     box-shadow: 0 0 0 3px rgba(33,150,211,0.14);
   }
@@ -227,6 +239,119 @@
     color: var(--gray-mid);
     text-align: center;
     line-height: 1.5;
+  }
+
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+
+  .funnel-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .funnel-step {
+    background: rgba(13,59,92,0.06);
+    border: 1px solid rgba(13,59,92,0.08);
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  .funnel-step strong {
+    display: block;
+    color: var(--orange);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 4px;
+  }
+
+  .funnel-step span {
+    display: block;
+    color: var(--blue-deep);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .quote-funnel-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 470px);
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 18px 46px rgba(0,0,0,0.18);
+  }
+
+  .quote-funnel-card h3 {
+    font-family: var(--ff-display);
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: var(--blue-deep);
+    margin-bottom: 8px;
+  }
+
+  .quote-funnel-card > p {
+    color: var(--gray-mid);
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .quote-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .quote-form-grid .lead-field.full {
+    grid-column: 1 / -1;
+  }
+
+  .radio-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .radio-option {
+    position: relative;
+  }
+
+  .radio-option input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .radio-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border: 1px solid #D8E1EA;
+    border-radius: 8px;
+    color: var(--gray-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .radio-option input:checked + span {
+    background: var(--blue-deep);
+    border-color: var(--blue-deep);
+    color: var(--white);
   }
 
   .hero-eyebrow {
@@ -1098,6 +1223,29 @@
     color: var(--gray-mid);
   }
 
+  .cta-box .quote-funnel-card > p {
+    color: var(--gray-mid);
+    max-width: none;
+    margin-bottom: 20px;
+  }
+
+  .quote-funnel-card .btn-primary {
+    width: 100%;
+    justify-content: center;
+    border: 0;
+    cursor: pointer;
+    margin-top: 16px;
+  }
+
+  .quote-funnel-card .cta-note {
+    margin-top: 12px;
+    color: var(--gray-mid);
+  }
+
+  .quote-funnel-card .cta-note strong {
+    color: var(--blue-deep);
+  }
+
   .mobile-sticky-cta {
     display: none;
   }
@@ -1150,6 +1298,10 @@
     .hero-stats { gap: 32px; }
     .hero-lead-card { padding: 24px; }
     .hero-lead-card h2 { font-size: 34px; }
+    .funnel-steps { grid-template-columns: 1fr; }
+    .quote-funnel-card { width: 100%; padding: 24px; }
+    .quote-form-grid { grid-template-columns: 1fr; }
+    .radio-row { grid-template-columns: 1fr; }
     .areas-layout { grid-template-columns: 1fr; gap: 24px; }
     .areas-list { grid-template-columns: 1fr; }
     .financing-panel { grid-template-columns: 1fr; padding: 34px 24px; }
@@ -1280,18 +1432,21 @@
       <aside class="hero-lead-card" aria-label="Request a free HVAC quote">
         <h2>NEED SERVICE FAST?</h2>
         <p>Tell us what is happening and a local ArcticAir comfort specialist will follow up quickly.</p>
-        <form class="lead-form" action="#quote" method="get">
+        <form class="lead-form" action="https://formspree.io/f/mlgvykwb" method="POST">
+          <input type="hidden" name="form_source" value="Hero fast-service funnel">
+          <label class="honeypot" for="hero-company">Company</label>
+          <input class="honeypot" id="hero-company" type="text" name="company" tabindex="-1" autocomplete="off">
           <div class="lead-field">
             <label for="hero-name">Name</label>
-            <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+            <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
           </div>
           <div class="lead-field">
             <label for="hero-phone">Phone</label>
-            <input id="hero-phone" name="phone" type="tel" autocomplete="tel" placeholder="(801) 555-0100">
+            <input id="hero-phone" name="phone" type="tel" autocomplete="tel" placeholder="(801) 555-0100" required>
           </div>
           <div class="lead-field">
             <label for="hero-issue">Issue Type</label>
-            <select id="hero-issue" name="issue">
+            <select id="hero-issue" name="issue_type" required>
               <option value="">Choose service</option>
               <option>AC repair</option>
               <option>Heating repair</option>
@@ -1301,8 +1456,17 @@
             </select>
           </div>
           <div class="lead-field">
+            <label for="hero-urgency">How Soon?</label>
+            <select id="hero-urgency" name="urgency" required>
+              <option value="">Choose timing</option>
+              <option>Today</option>
+              <option>This week</option>
+              <option>Planning ahead</option>
+            </select>
+          </div>
+          <div class="lead-field">
             <label for="hero-zip">ZIP Code</label>
-            <input id="hero-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84101">
+            <input id="hero-zip" name="zip_code" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84101" required>
           </div>
           <button class="btn-primary" type="submit">
             Get My Free Quote
@@ -1664,14 +1828,84 @@
         <span class="cta-badge">No Obligation · 100% Free</span>
         <h2>BOOK YOUR FREE<br>HVAC INSPECTION</h2>
         <p>Tell us what is going on and we will give you a fast, clear estimate with same-day options when available. No pressure, no surprises, no hidden fees.</p>
+        <div class="funnel-steps" aria-label="Appointment funnel steps">
+          <div class="funnel-step">
+            <strong>Step 1</strong>
+            <span>Choose the service</span>
+          </div>
+          <div class="funnel-step">
+            <strong>Step 2</strong>
+            <span>Pick the urgency</span>
+          </div>
+          <div class="funnel-step">
+            <strong>Step 3</strong>
+            <span>Get a callback</span>
+          </div>
+        </div>
       </div>
-      <div class="cta-action">
-        <a href="tel:+18015550100" class="btn-white">
-          Claim Free System Evaluation
+      <form class="quote-funnel-card" action="https://formspree.io/f/mlgvykwb" method="POST" aria-label="HVAC appointment request form">
+        <h3>REQUEST APPOINTMENT</h3>
+        <p>Answer a few quick questions and our scheduler will contact you with the fastest available appointment.</p>
+        <input type="hidden" name="form_source" value="Main appointment funnel">
+        <label class="honeypot" for="quote-company">Company</label>
+        <input class="honeypot" id="quote-company" type="text" name="company" tabindex="-1" autocomplete="off">
+        <div class="quote-form-grid">
+          <div class="lead-field full">
+            <label for="quote-service">What do you need?</label>
+            <select id="quote-service" name="service_type" required>
+              <option value="">Choose a service</option>
+              <option>AC repair</option>
+              <option>Furnace repair</option>
+              <option>Heat pump installation</option>
+              <option>Full system replacement</option>
+              <option>Maintenance tune-up</option>
+              <option>Indoor air quality</option>
+            </select>
+          </div>
+          <div class="lead-field full">
+            <label>How urgent is it?</label>
+            <div class="radio-row">
+              <label class="radio-option">
+                <input type="radio" name="urgency" value="Today" required>
+                <span>Today</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="urgency" value="This week">
+                <span>This week</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="urgency" value="Planning ahead">
+                <span>Planning ahead</span>
+              </label>
+            </div>
+          </div>
+          <div class="lead-field">
+            <label for="quote-name">Name</label>
+            <input id="quote-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="lead-field">
+            <label for="quote-phone">Phone</label>
+            <input id="quote-phone" name="phone" type="tel" autocomplete="tel" placeholder="(801) 555-0100" required>
+          </div>
+          <div class="lead-field">
+            <label for="quote-email">Email</label>
+            <input id="quote-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="lead-field">
+            <label for="quote-zip">ZIP Code</label>
+            <input id="quote-zip" name="zip_code" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84101" required>
+          </div>
+          <div class="lead-field full">
+            <label for="quote-message">What is happening?</label>
+            <textarea id="quote-message" name="message" placeholder="Example: AC is blowing warm air and the unit is making noise."></textarea>
+          </div>
+        </div>
+        <button class="btn-primary" type="submit">
+          Send My Appointment Request
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <p class="cta-note" style="color:rgba(255,255,255,0.6); margin-top:14px; font-size:13px; text-align:center;">Or call <strong style="color:white;">(801) 555-0100</strong></p>
-      </div>
+        </button>
+        <p class="cta-note">Or call <strong>(801) 555-0100</strong></p>
+      </form>
     </div>
   </div>
 </section>
