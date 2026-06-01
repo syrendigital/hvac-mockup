@@ -7,1283 +7,209 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --ice: #E6F4FB;
-    --ice-mid: #B5D6EC;
-    --blue-deep: #0D3B5C;
-    --blue-mid: #1A6FA3;
-    --blue-accent: #2196D3;
-    --orange: #E8640A;
-    --orange-light: #FF8534;
-    --white: #FFFFFF;
-    --off-white: #F7F9FB;
-    --gray-light: #EDF1F5;
-    --gray-mid: #8B9BAD;
-    --gray-dark: #2D3A45;
-    --text: #1A2530;
-    --ff-display: 'Bebas Neue', sans-serif;
-    --ff-body: 'DM Sans', sans-serif;
+    --ice: #E6F4FB; --ice-mid: #B5D6EC; --blue-deep: #0D3B5C; --blue-mid: #1A6FA3;
+    --blue-accent: #2196D3; --orange: #E8640A; --orange-light: #FF8534; --white: #FFFFFF;
+    --off-white: #F7F9FB; --gray-light: #EDF1F5; --gray-mid: #8B9BAD; --gray-dark: #2D3A45;
+    --text: #1A2530; --ff-display: 'Bebas Neue', sans-serif; --ff-body: 'DM Sans', sans-serif;
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--ff-body);
-    color: var(--text);
-    background: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  .site-nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    height: 70px;
-    background: rgba(13, 59, 92, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .nav-logo {
-    font-family: var(--ff-display);
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
+  body { font-family: var(--ff-body); color: var(--text); background: var(--white); overflow-x: hidden; }
+  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 70px; background: rgba(13, 59, 92, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-logo { font-family: var(--ff-display); font-size: 28px; letter-spacing: 2px; color: var(--white); display: flex; align-items: center; gap: 8px; }
   .nav-logo span { color: var(--orange-light); }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: rgba(255,255,255,0.75);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--white); }
-
-  .nav-cta {
-    background: var(--orange);
-    color: var(--white) !important;
-    padding: 10px 22px;
-    border-radius: 6px;
-    font-weight: 700 !important;
-    transition: background 0.2s !important;
-  }
-
+  .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700 !important; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--orange-light) !important; color: var(--white) !important; }
-
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: var(--blue-deep);
-    overflow: hidden;
-  }
-
-  .hero-bg-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(33,150,211,0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(33,150,211,0.07) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: gridShift 20s linear infinite;
-  }
-
-  @keyframes gridShift {
-    0% { transform: translate(0,0); }
-    100% { transform: translate(60px,60px); }
-  }
-
-  .hero-glow {
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(33,150,211,0.18) 0%, transparent 70%);
-    top: -150px;
-    right: -100px;
-    pointer-events: none;
-  }
-
-  .hero-glow-2 {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(232,100,10,0.12) 0%, transparent 70%);
-    bottom: 100px;
-    left: 10%;
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 110px 5% 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
-    gap: 48px;
-    align-items: center;
-  }
-
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: var(--blue-deep); overflow: hidden; }
+  .hero-bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(33,150,211,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(33,150,211,0.07) 1px, transparent 1px); background-size: 60px 60px; animation: gridShift 20s linear infinite; }
+  @keyframes gridShift { 0% { transform: translate(0,0); } 100% { transform: translate(60px,60px); } }
+  .hero-glow { position: absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(33,150,211,0.18) 0%, transparent 70%); top: -150px; right: -100px; pointer-events: none; }
+  .hero-glow-2 { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(232,100,10,0.12) 0%, transparent 70%); bottom: 100px; left: 10%; pointer-events: none; }
+  .hero-content { position: relative; z-index: 2; padding: 110px 5% 80px; max-width: 1200px; margin: 0 auto; width: 100%; }
+  .hero-layout { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr); gap: 48px; align-items: center; }
   .hero-copy { min-width: 0; }
-
-  .hero-lead-card {
-    background: rgba(255,255,255,0.96);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.28);
-    animation: fadeUp 0.7s 0.25s ease both;
-  }
-
-  .hero-lead-card h2 {
-    font-family: var(--ff-display);
-    font-size: 40px;
-    letter-spacing: 1px;
-    color: var(--blue-deep);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .hero-lead-card p {
-    font-size: 14px;
-    color: var(--gray-mid);
-    line-height: 1.55;
-    margin-bottom: 22px;
-  }
-
-  .lead-form {
-    display: grid;
-    gap: 14px;
-  }
-
-  .lead-field label {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--blue-deep);
-    margin-bottom: 6px;
-    letter-spacing: 0.4px;
-  }
-
-  .lead-field input,
-  .lead-field select,
-  .lead-field textarea {
-    width: 100%;
-    border: 1px solid #D8E1EA;
-    border-radius: 8px;
-    background: var(--white);
-    color: var(--text);
-    font: 500 15px var(--ff-body);
-    padding: 0 14px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .lead-field input,
-  .lead-field select {
-    height: 48px;
-  }
-
-  .lead-field textarea {
-    min-height: 98px;
-    padding-top: 12px;
-    resize: vertical;
-  }
-
-  .lead-field input:focus,
-  .lead-field select:focus,
-  .lead-field textarea:focus {
-    border-color: var(--blue-accent);
-    box-shadow: 0 0 0 3px rgba(33,150,211,0.14);
-  }
-
-  .lead-form .btn-primary {
-    width: 100%;
-    justify-content: center;
-    border: 0;
-    cursor: pointer;
-    margin-top: 4px;
-  }
-
-  .lead-note {
-    font-size: 12px;
-    color: var(--gray-mid);
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  .honeypot {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-    height: 0;
-    width: 0;
-    pointer-events: none;
-  }
-
-  .funnel-steps {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 22px;
-  }
-
-  .funnel-step {
-    background: rgba(13,59,92,0.06);
-    border: 1px solid rgba(13,59,92,0.08);
-    border-radius: 8px;
-    padding: 12px;
-  }
-
-  .funnel-step strong {
-    display: block;
-    color: var(--orange);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    margin-bottom: 4px;
-  }
-
-  .funnel-step span {
-    display: block;
-    color: var(--blue-deep);
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1.35;
-  }
-
-  .quote-funnel-card {
-    position: relative;
-    z-index: 1;
-    width: min(100%, 470px);
-    background: var(--white);
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 18px 46px rgba(0,0,0,0.18);
-  }
-
-  .quote-funnel-card h3 {
-    font-family: var(--ff-display);
-    font-size: 36px;
-    letter-spacing: 1px;
-    line-height: 1;
-    color: var(--blue-deep);
-    margin-bottom: 8px;
-  }
-
-  .quote-funnel-card > p {
-    color: var(--gray-mid);
-    font-size: 14px;
-    line-height: 1.55;
-    margin-bottom: 20px;
-  }
-
-  .quote-form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-
-  .quote-form-grid .lead-field.full {
-    grid-column: 1 / -1;
-  }
-
-  .radio-row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .radio-option {
-    position: relative;
-  }
-
-  .radio-option input {
-    position: absolute;
-    opacity: 0;
-  }
-
-  .radio-option span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    border: 1px solid #D8E1EA;
-    border-radius: 8px;
-    color: var(--gray-dark);
-    font-size: 13px;
-    font-weight: 700;
-    text-align: center;
-    padding: 8px;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
-  }
-
-  .radio-option input:checked + span {
-    background: var(--blue-deep);
-    border-color: var(--blue-deep);
-    color: var(--white);
-  }
-
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(33,150,211,0.15);
-    border: 1px solid rgba(33,150,211,0.3);
-    border-radius: 100px;
-    padding: 6px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--ice-mid);
-    margin-bottom: 28px;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--orange-light);
-    display: inline-block;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.7); }
-  }
-
-  .hero h1 {
-    font-family: var(--ff-display);
-    font-size: clamp(72px, 10vw, 130px);
-    line-height: 0.92;
-    color: var(--white);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    animation: fadeUp 0.7s 0.1s ease both;
-  }
-
-  .hero h1 em {
-    font-style: normal;
-    color: var(--blue-accent);
-    display: block;
-  }
-
-  .hero h1 .heat {
-    color: var(--orange-light);
-  }
-
-  .hero-sub {
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.65);
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 44px;
-    animation: fadeUp 0.7s 0.2s ease both;
-  }
-
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    animation: fadeUp 0.7s 0.3s ease both;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--orange);
-    color: var(--white);
-    padding: 18px 38px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 0.3px;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 8px 32px rgba(232,100,10,0.35);
-  }
-
-  .btn-primary:hover {
-    background: var(--orange-light);
-    transform: translateY(-2px);
-  }
-
+  .hero-lead-card { background: rgba(255,255,255,0.96); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 30px; box-shadow: 0 24px 70px rgba(0,0,0,0.28); animation: fadeUp 0.7s 0.25s ease both; }
+  .hero-lead-card h2 { font-family: var(--ff-display); font-size: 40px; letter-spacing: 1px; color: var(--blue-deep); line-height: 1; margin-bottom: 8px; }
+  .hero-lead-card p { font-size: 14px; color: var(--gray-mid); line-height: 1.55; margin-bottom: 22px; }
+  .lead-form { display: grid; gap: 14px; }
+  .lead-field label { display: block; font-size: 12px; font-weight: 700; color: var(--blue-deep); margin-bottom: 6px; letter-spacing: 0.4px; }
+  .lead-field input, .lead-field select, .lead-field textarea { width: 100%; height: 48px; border: 1px solid #D8E1EA; border-radius: 8px; background: var(--white); color: var(--text); font: 500 15px var(--ff-body); padding: 0 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+  .lead-field textarea { height: auto; min-height: 100px; padding: 14px; resize: vertical; }
+  .lead-field input:focus, .lead-field select:focus, .lead-field textarea:focus { border-color: var(--blue-accent); box-shadow: 0 0 0 3px rgba(33,150,211,0.14); }
+  .lead-form .btn-primary { width: 100%; justify-content: center; border: 0; cursor: pointer; margin-top: 4px; }
+  .lead-note { font-size: 12px; color: var(--gray-mid); text-align: center; line-height: 1.5; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(33,150,211,0.15); border: 1px solid rgba(33,150,211,0.3); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ice-mid); margin-bottom: 28px; animation: fadeUp 0.6s ease both; }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--orange-light); display: inline-block; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+  .hero h1 { font-family: var(--ff-display); font-size: clamp(72px, 10vw, 130px); line-height: 0.92; color: var(--white); letter-spacing: 2px; margin-bottom: 10px; animation: fadeUp 0.7s 0.1s ease both; }
+  .hero h1 em { font-style: normal; color: var(--blue-accent); display: block; }
+  .hero h1 .heat { color: var(--orange-light); }
+  .hero-sub { font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.65); max-width: 520px; line-height: 1.7; margin-bottom: 44px; animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; animation: fadeUp 0.7s 0.3s ease both; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: var(--white); padding: 18px 38px; border-radius: 8px; font-size: 16px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s, transform 0.15s; box-shadow: 0 8px 32px rgba(232,100,10,0.35); border: none; cursor: pointer; }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
   .btn-primary svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255,255,255,0.8);
-    font-size: 15px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
   .btn-secondary:hover { color: var(--white); }
-
   .btn-secondary svg { width: 36px; height: 36px; }
-
-  .hero-stats {
-    display: flex;
-    gap: 48px;
-    margin-top: 64px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    animation: fadeUp 0.7s 0.4s ease both;
-    flex-wrap: wrap;
-  }
-
-  .stat-item { }
-  .stat-num {
-    font-family: var(--ff-display);
-    font-size: 48px;
-    color: var(--white);
-    line-height: 1;
-    letter-spacing: 1px;
-  }
+  .hero-stats { display: flex; gap: 48px; margin-top: 64px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); animation: fadeUp 0.7s 0.4s ease both; flex-wrap: wrap; }
+  .stat-num { font-family: var(--ff-display); font-size: 48px; color: var(--white); line-height: 1; letter-spacing: 1px; }
   .stat-num span { color: var(--orange-light); }
   .stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
-
-  .hero-image-block {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 42%;
-    height: 90%;
-    display: flex;
-    align-items: flex-end;
-    pointer-events: none;
-  }
-
-  .hvac-illustration {
-    width: 100%;
-    height: 100%;
-    opacity: 0.12;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── SERVICES ── */
-  .services {
-    background: var(--off-white);
-    padding: 100px 5%;
-  }
-
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--blue-accent);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: var(--ff-display);
-    font-size: clamp(42px, 5vw, 64px);
-    letter-spacing: 1px;
-    color: var(--blue-deep);
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-
-  .section-sub {
-    font-size: 17px;
-    color: var(--gray-mid);
-    font-weight: 300;
-    max-width: 500px;
-    line-height: 1.7;
-    margin-bottom: 60px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .service-card {
-    background: var(--white);
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 16px;
-    padding: 36px 32px;
-    transition: transform 0.25s, box-shadow 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--blue-accent);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.3s;
-  }
-
+  .hero-image-block { position: absolute; right: 0; bottom: 0; width: 42%; height: 90%; display: flex; align-items: flex-end; pointer-events: none; }
+  .hvac-illustration { width: 100%; height: 100%; opacity: 0.12; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .services { background: var(--off-white); padding: 100px 5%; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 16px; }
+  .section-title { font-family: var(--ff-display); font-size: clamp(42px, 5vw, 64px); letter-spacing: 1px; color: var(--blue-deep); line-height: 1; margin-bottom: 16px; }
+  .section-sub { font-size: 17px; color: var(--gray-mid); font-weight: 300; max-width: 500px; line-height: 1.7; margin-bottom: 60px; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .service-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 36px 32px; transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--blue-accent); transform: scaleY(0); transform-origin: bottom; transition: transform 0.3s; }
   .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(13,59,92,0.1); }
   .service-card:hover::before { transform: scaleY(1); }
-
-  .service-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background: var(--ice);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-
+  .service-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--ice); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
   .service-icon svg { width: 26px; height: 26px; stroke: var(--blue-mid); fill: none; stroke-width: 1.8; }
   .service-card.hot .service-icon { background: #FEF0E6; }
   .service-card.hot .service-icon svg { stroke: var(--orange); }
-
-  .service-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--blue-deep);
-    margin-bottom: 10px;
-  }
-
-  .service-card p {
-    font-size: 15px;
-    color: var(--gray-mid);
-    line-height: 1.65;
-    font-weight: 300;
-    margin-bottom: 20px;
-  }
-
-  .service-link {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--blue-accent);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    letter-spacing: 0.3px;
-    transition: gap 0.2s;
-  }
-
+  .service-card h3 { font-size: 20px; font-weight: 700; color: var(--blue-deep); margin-bottom: 10px; }
+  .service-card p { font-size: 15px; color: var(--gray-mid); line-height: 1.65; font-weight: 300; margin-bottom: 20px; }
+  .service-link { font-size: 14px; font-weight: 700; color: var(--blue-accent); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.3px; transition: gap 0.2s; }
   .service-link:hover { gap: 10px; }
-
-  /* SERVICE AREAS */
-  .service-areas {
-    background: var(--white);
-    padding: 96px 5%;
-  }
-
-  .service-areas-inner,
-  .financing-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .areas-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-    gap: 48px;
-    align-items: start;
-  }
-
-  .areas-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .area-pill {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 56px;
-    background: var(--off-white);
-    border: 1px solid rgba(13,59,92,0.08);
-    border-radius: 10px;
-    padding: 0 18px;
-    color: var(--blue-deep);
-    font-weight: 700;
-  }
-
-  .area-pill::before {
-    content: '';
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--orange);
-    flex-shrink: 0;
-  }
-
-  /* FINANCING */
-  .financing {
-    background: var(--ice);
-    padding: 92px 5%;
-  }
-
-  .financing-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 36px;
-    align-items: center;
-    background: var(--blue-deep);
-    border-radius: 18px;
-    padding: 48px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .financing-panel::after {
-    content: '';
-    position: absolute;
-    right: -70px;
-    top: -70px;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    pointer-events: none;
-  }
-
-  .financing-panel > div {
-    position: relative;
-    z-index: 1;
-  }
-
+  .service-areas { background: var(--white); padding: 96px 5%; }
+  .service-areas-inner, .financing-inner { max-width: 1200px; margin: 0 auto; }
+  .areas-layout { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+  .areas-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .area-pill { display: flex; align-items: center; gap: 10px; min-height: 56px; background: var(--off-white); border: 1px solid rgba(13,59,92,0.08); border-radius: 10px; padding: 0 18px; color: var(--blue-deep); font-weight: 700; }
+  .area-pill::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+  .financing { background: var(--ice); padding: 92px 5%; }
+  .financing-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 36px; align-items: center; background: var(--blue-deep); border-radius: 18px; padding: 48px; position: relative; overflow: hidden; }
+  .financing-panel::after { content: ''; position: absolute; right: -70px; top: -70px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255,255,255,0.08); pointer-events: none; }
+  .financing-panel > div { position: relative; z-index: 1; }
   .financing-panel .section-label { color: var(--orange-light); }
   .financing-panel .section-title { color: var(--white); margin-bottom: 12px; }
   .financing-panel .section-sub { color: rgba(255,255,255,0.62); margin-bottom: 0; }
-
-  .financing-points {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 1fr));
-    gap: 12px;
-    min-width: 430px;
-  }
-
-  .financing-point {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 10px;
-    padding: 18px;
-    color: var(--white);
-  }
-
-  .financing-point strong {
-    display: block;
-    font-size: 26px;
-    color: var(--orange-light);
-    margin-bottom: 4px;
-  }
-
-  .financing-point span {
-    font-size: 13px;
-    color: rgba(255,255,255,0.64);
-    line-height: 1.4;
-  }
-
-  /* ── TRUST / BEFORE-AFTER ── */
-  .trust {
-    background: var(--blue-deep);
-    padding: 100px 5%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .trust::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(33,150,211,0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(33,150,211,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  .trust-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
+  .financing-points { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 12px; min-width: 430px; }
+  .financing-point { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 18px; color: var(--white); }
+  .financing-point strong { display: block; font-size: 26px; color: var(--orange-light); margin-bottom: 4px; }
+  .financing-point span { font-size: 13px; color: rgba(255,255,255,0.64); line-height: 1.4; }
+  .trust { background: var(--blue-deep); padding: 100px 5%; position: relative; overflow: hidden; }
+  .trust::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(33,150,211,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(33,150,211,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .trust-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
   .trust .section-label { color: var(--orange-light); }
   .trust .section-title { color: var(--white); }
   .trust .section-sub { color: rgba(255,255,255,0.5); }
-
-  .trust-badges {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
-    margin: 0 0 48px;
-  }
-
-  .trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-height: 72px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 16px 18px;
-    color: var(--white);
-    font-weight: 700;
-  }
-
-  .trust-badge svg {
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-    stroke: var(--orange-light);
-    fill: none;
-    stroke-width: 2;
-  }
-
-  .before-after-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 60px;
-    position: relative;
-  }
-
-  .ba-panel {
-    position: relative;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-  }
-
-  .ba-panel-before {
-    background: linear-gradient(135deg, #1a2a38 0%, #2d4155 100%);
-  }
-
-  .ba-panel-after {
-    background: linear-gradient(135deg, #0D3B5C 0%, #1A6FA3 100%);
-  }
-
-  .ba-label {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 100px;
-  }
-
-  .ba-panel-before .ba-label {
-    background: rgba(0,0,0,0.5);
-    color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .ba-panel-after .ba-label {
-    background: var(--orange);
-    color: var(--white);
-  }
-
-  .ba-interior {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ba-old-unit {
-    text-align: center;
-    opacity: 0.4;
-  }
-
-  .ba-new-unit {
-    text-align: center;
-  }
-
-  .ba-old-unit svg, .ba-new-unit svg {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto 12px;
-  }
-
-  .ba-old-unit p {
-    color: rgba(255,255,255,0.4);
-    font-size: 13px;
-    font-weight: 300;
-  }
-
-  .ba-new-unit p {
-    color: rgba(255,255,255,0.9);
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  .ba-divider {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    width: 44px;
-    height: 44px;
-    background: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  }
-
+  .trust-badges { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 0 0 48px; }
+  .trust-badge { display: flex; align-items: center; gap: 12px; min-height: 72px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 18px; color: var(--white); font-weight: 700; }
+  .trust-badge svg { width: 28px; height: 28px; flex-shrink: 0; stroke: var(--orange-light); fill: none; stroke-width: 2; }
+  .before-after-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: 16px; overflow: hidden; margin-bottom: 60px; position: relative; }
+  .ba-panel { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+  .ba-panel-before { background: linear-gradient(135deg, #1a2a38 0%, #2d4155 100%); }
+  .ba-panel-after { background: linear-gradient(135deg, #0D3B5C 0%, #1A6FA3 100%); }
+  .ba-label { position: absolute; top: 20px; left: 20px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; }
+  .ba-panel-before .ba-label { background: rgba(0,0,0,0.5); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.1); }
+  .ba-panel-after .ba-label { background: var(--orange); color: var(--white); }
+  .ba-interior { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .ba-old-unit { text-align: center; opacity: 0.4; }
+  .ba-new-unit { text-align: center; }
+  .ba-old-unit svg, .ba-new-unit svg { width: 100px; height: 100px; display: block; margin: 0 auto 12px; }
+  .ba-old-unit p { color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 300; }
+  .ba-new-unit p { color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 500; }
+  .ba-divider { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 10; width: 44px; height: 44px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
   .ba-divider svg { width: 20px; height: 20px; stroke: var(--blue-deep); fill: none; stroke-width: 2.5; }
-
-  .customer-story {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 44px;
-  }
-
-  .customer-story-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 22px;
-  }
-
-  .customer-story h3 {
-    font-family: var(--ff-display);
-    font-size: 38px;
-    letter-spacing: 1px;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  .customer-story-tag {
-    color: rgba(255,255,255,0.55);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.6px;
-  }
-
-  .story-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .story-step {
-    border-left: 3px solid var(--orange);
-    padding: 4px 0 4px 18px;
-  }
-
-  .story-step span {
-    display: block;
-    color: var(--orange-light);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .story-step p {
-    color: rgba(255,255,255,0.82);
-    font-size: 16px;
-    line-height: 1.55;
-    font-weight: 300;
-  }
-
-  .comparison {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 48px;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.24);
-  }
-
-  .comparison-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    background: var(--off-white);
-    padding: 26px 30px;
-    border-bottom: 1px solid #E0E7EF;
-  }
-
-  .comparison-head h3 {
-    font-family: var(--ff-display);
-    font-size: 36px;
-    letter-spacing: 1px;
-    color: var(--blue-deep);
-    line-height: 1;
-  }
-
-  .comparison-head p {
-    color: var(--gray-mid);
-    font-size: 14px;
-    line-height: 1.5;
-    max-width: 430px;
-  }
-
-  .comparison table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .comparison th,
-  .comparison td {
-    padding: 18px 22px;
-    text-align: left;
-    border-bottom: 1px solid #E8EEF4;
-    font-size: 15px;
-  }
-
-  .comparison th {
-    color: var(--blue-deep);
-    font-weight: 700;
-    background: var(--white);
-  }
-
-  .comparison td:first-child {
-    color: var(--gray-dark);
-    font-weight: 700;
-  }
-
+  .customer-story { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; margin-bottom: 44px; }
+  .customer-story-header { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+  .customer-story h3 { font-family: var(--ff-display); font-size: 38px; letter-spacing: 1px; color: var(--white); line-height: 1; }
+  .customer-story-tag { color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; }
+  .story-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .story-step { border-left: 3px solid var(--orange); padding: 4px 0 4px 18px; }
+  .story-step span { display: block; color: var(--orange-light); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  .story-step p { color: rgba(255,255,255,0.82); font-size: 16px; line-height: 1.55; font-weight: 300; }
+  .comparison { background: var(--white); border-radius: 16px; overflow: hidden; margin-bottom: 48px; box-shadow: 0 24px 70px rgba(0,0,0,0.24); }
+  .comparison-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--off-white); padding: 26px 30px; border-bottom: 1px solid #E0E7EF; }
+  .comparison-head h3 { font-family: var(--ff-display); font-size: 36px; letter-spacing: 1px; color: var(--blue-deep); line-height: 1; }
+  .comparison-head p { color: var(--gray-mid); font-size: 14px; line-height: 1.5; max-width: 430px; }
+  .comparison table { width: 100%; border-collapse: collapse; }
+  .comparison th, .comparison td { padding: 18px 22px; text-align: left; border-bottom: 1px solid #E8EEF4; font-size: 15px; }
+  .comparison th { color: var(--blue-deep); font-weight: 700; background: var(--white); }
+  .comparison td:first-child { color: var(--gray-dark); font-weight: 700; }
   .comparison tr:last-child td { border-bottom: 0; }
-
-  .status {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 100px;
-    padding: 6px 10px;
-    font-weight: 700;
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  .status.good {
-    background: #E9F7EF;
-    color: #0F6E56;
-  }
-
-  .status.maybe {
-    background: #FFF3E8;
-    color: #993C1D;
-  }
-
-  .status.bad {
-    background: #FDECEA;
-    color: #9F2F28;
-  }
-
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
-  .trust-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 28px 24px;
-  }
-
-  .trust-card-icon {
-    font-size: 28px;
-    margin-bottom: 14px;
-  }
-
-  .trust-card h4 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-
-  .trust-card p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  /* ── REVIEWS ── */
-  .reviews {
-    background: var(--gray-light);
-    padding: 100px 5%;
-  }
-
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 60px;
-  }
-
-  .review-card {
-    background: var(--white);
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 16px;
-    padding: 32px 28px;
-  }
-
-  .stars {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 16px;
-  }
-
+  .status { display: inline-flex; align-items: center; border-radius: 100px; padding: 6px 10px; font-weight: 700; font-size: 13px; white-space: nowrap; }
+  .status.good { background: #E9F7EF; color: #0F6E56; }
+  .status.maybe { background: #FFF3E8; color: #993C1D; }
+  .status.bad { background: #FDECEA; color: #9F2F28; }
+  .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .trust-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 28px 24px; }
+  .trust-card-icon { font-size: 28px; margin-bottom: 14px; }
+  .trust-card h4 { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .trust-card p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6; font-weight: 300; }
+  .reviews { background: var(--gray-light); padding: 100px 5%; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+  .review-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 32px 28px; }
+  .stars { display: flex; gap: 4px; margin-bottom: 16px; }
   .star { color: var(--orange); font-size: 16px; }
-
-  .review-text {
-    font-size: 15px;
-    color: var(--gray-dark);
-    line-height: 1.7;
-    font-weight: 300;
-    margin-bottom: 24px;
-    font-style: italic;
-  }
-
-  .reviewer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .reviewer-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--white);
-    flex-shrink: 0;
-  }
-
+  .review-text { font-size: 15px; color: var(--gray-dark); line-height: 1.7; font-weight: 300; margin-bottom: 24px; font-style: italic; }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; color: var(--white); flex-shrink: 0; }
   .reviewer-name { font-weight: 700; font-size: 14px; color: var(--blue-deep); }
   .reviewer-loc { font-size: 13px; color: var(--gray-mid); }
 
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--white);
-    padding: 100px 5%;
-  }
-
-  .cta-box {
-    background: var(--orange);
-    border-radius: 24px;
-    padding: 72px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
-    overflow: hidden;
-    flex-wrap: wrap;
-  }
-
-  .cta-box::before {
-    content: '';
-    position: absolute;
-    right: -80px;
-    top: -80px;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-  }
-
-  .cta-box::after {
-    content: '';
-    position: absolute;
-    right: 60px;
-    bottom: -100px;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-  }
-
+  /* NEW QUOTE FORM SECTION */
+  .quote-section { background: var(--white); padding: 100px 5%; }
+  .quote-section-inner { max-width: 1200px; margin: 0 auto; }
+  .quote-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .quote-info h2 { font-family: var(--ff-display); font-size: clamp(38px, 4vw, 56px); letter-spacing: 1px; color: var(--blue-deep); line-height: 1; margin-bottom: 20px; }
+  .quote-info p { font-size: 17px; color: var(--gray-mid); font-weight: 300; line-height: 1.7; margin-bottom: 40px; }
+  .quote-benefits { display: grid; gap: 20px; }
+  .quote-benefit { display: flex; align-items: flex-start; gap: 16px; }
+  .quote-benefit-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--ice); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .quote-benefit-icon svg { width: 24px; height: 24px; stroke: var(--blue-mid); fill: none; stroke-width: 2; }
+  .quote-benefit h4 { font-size: 16px; font-weight: 700; color: var(--blue-deep); margin-bottom: 4px; }
+  .quote-benefit p { font-size: 14px; color: var(--gray-mid); margin-bottom: 0; }
+  .quote-form-card { background: var(--white); border: 1px solid rgba(13,59,92,0.08); border-radius: 20px; padding: 40px; box-shadow: 0 24px 70px rgba(13,59,92,0.1); position: relative; }
+  .quote-form-card::before { content: ''; position: absolute; top: 0; left: 40px; right: 40px; height: 4px; background: var(--orange); border-radius: 0 0 4px 4px; }
+  .quote-form-card h3 { font-family: var(--ff-display); font-size: 32px; letter-spacing: 1px; color: var(--blue-deep); margin-bottom: 8px; }
+  .quote-form-card .form-subtitle { font-size: 14px; color: var(--gray-mid); margin-bottom: 28px; }
+  .quote-form { display: grid; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full-width { grid-column: 1 / -1; }
+  .form-group label { font-size: 12px; font-weight: 700; color: var(--blue-deep); letter-spacing: 0.4px; }
+  .form-group label .required { color: var(--orange); margin-left: 2px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; height: 52px; border: 1.5px solid #D8E1EA; border-radius: 10px; background: var(--white); color: var(--text); font: 500 15px var(--ff-body); padding: 0 16px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+  .form-group textarea { height: auto; min-height: 110px; padding: 14px 16px; resize: vertical; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-accent); box-shadow: 0 0 0 4px rgba(33,150,211,0.12); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #B0BEC5; }
+  .form-submit { width: 100%; justify-content: center; margin-top: 8px; font-size: 17px; padding: 20px; }
+  .form-privacy { font-size: 12px; color: var(--gray-mid); text-align: center; line-height: 1.5; margin-top: 16px; }
+  .form-privacy a { color: var(--blue-accent); text-decoration: none; font-weight: 500; }
+  .form-message { display: none; padding: 16px; border-radius: 10px; font-size: 14px; font-weight: 500; text-align: center; margin-bottom: 16px; }
+  .form-message.success { display: block; background: #E9F7EF; color: #0F6E56; border: 1px solid #B8E0D0; }
+  .form-message.error { display: block; background: #FDECEA; color: #9F2F28; border: 1px solid #F5C6C1; }
+  .form-message.loading { display: block; background: var(--ice); color: var(--blue-mid); border: 1px solid var(--ice-mid); }
+  .cta-section { background: var(--white); padding: 100px 5%; }
+  .cta-box { background: var(--orange); border-radius: 24px; padding: 72px 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; overflow: hidden; flex-wrap: wrap; }
+  .cta-box::before { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+  .cta-box::after { content: ''; position: absolute; right: 60px; bottom: -100px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255,255,255,0.05); }
   .cta-content { position: relative; z-index: 1; }
-
-  .cta-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.9);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-  }
-
-  .cta-box h2 {
-    font-family: var(--ff-display);
-    font-size: clamp(38px, 4vw, 56px);
-    letter-spacing: 1px;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 14px;
-  }
-
-  .cta-box p {
-    font-size: 16px;
-    color: rgba(255,255,255,0.75);
-    font-weight: 300;
-    max-width: 420px;
-    line-height: 1.6;
-  }
-
+  .cta-badge { display: inline-block; background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px; }
+  .cta-box h2 { font-family: var(--ff-display); font-size: clamp(38px, 4vw, 56px); letter-spacing: 1px; color: var(--white); line-height: 1; margin-bottom: 14px; }
+  .cta-box p { font-size: 16px; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 420px; line-height: 1.6; }
   .cta-action { position: relative; z-index: 1; flex-shrink: 0; }
-
-  .btn-white {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--white);
-    color: var(--orange);
-    padding: 20px 44px;
-    border-radius: 10px;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.15s;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    white-space: nowrap;
-  }
-
+  .btn-white { display: inline-flex; align-items: center; gap: 10px; background: var(--white); color: var(--orange); padding: 20px 44px; border-radius: 10px; font-size: 17px; font-weight: 700; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 8px 32px rgba(0,0,0,0.15); white-space: nowrap; border: none; cursor: pointer; }
   .btn-white:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
   .btn-white svg { width: 18px; height: 18px; fill: none; stroke: var(--orange); stroke-width: 2.5; }
-
-  .cta-note {
-    text-align: center;
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--gray-mid);
-  }
-
-  .cta-box .quote-funnel-card > p {
-    color: var(--gray-mid);
-    max-width: none;
-    margin-bottom: 20px;
-  }
-
-  .quote-funnel-card .btn-primary {
-    width: 100%;
-    justify-content: center;
-    border: 0;
-    cursor: pointer;
-    margin-top: 16px;
-  }
-
-  .quote-funnel-card .cta-note {
-    margin-top: 12px;
-    color: var(--gray-mid);
-  }
-
-  .quote-funnel-card .cta-note strong {
-    color: var(--blue-deep);
-  }
-
-  .mobile-sticky-cta {
-    display: none;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--blue-deep);
-    color: rgba(255,255,255,0.5);
-    padding: 40px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .footer-logo {
-    font-family: var(--ff-display);
-    font-size: 24px;
-    letter-spacing: 2px;
-    color: var(--white);
-  }
-
+  .cta-note { text-align: center; margin-top: 24px; font-size: 13px; color: var(--gray-mid); }
+  .mobile-sticky-cta { display: none; }
+  footer { background: var(--blue-deep); color: rgba(255,255,255,0.5); padding: 40px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: var(--ff-display); font-size: 24px; letter-spacing: 2px; color: var(--white); }
   .footer-logo span { color: var(--orange-light); }
-
   footer p { font-size: 13px; font-weight: 300; }
-
-  footer nav a {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    font-size: 13px;
-    margin-left: 24px;
-    transition: color 0.2s;
-  }
-
+  footer nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; margin-left: 24px; transition: color 0.2s; }
   footer nav a:hover { color: var(--white); }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     body { padding-bottom: 92px; }
     .nav-links { display: none; }
@@ -1298,10 +224,6 @@
     .hero-stats { gap: 32px; }
     .hero-lead-card { padding: 24px; }
     .hero-lead-card h2 { font-size: 34px; }
-    .funnel-steps { grid-template-columns: 1fr; }
-    .quote-funnel-card { width: 100%; padding: 24px; }
-    .quote-form-grid { grid-template-columns: 1fr; }
-    .radio-row { grid-template-columns: 1fr; }
     .areas-layout { grid-template-columns: 1fr; gap: 24px; }
     .areas-list { grid-template-columns: 1fr; }
     .financing-panel { grid-template-columns: 1fr; padding: 34px 24px; }
@@ -1317,53 +239,20 @@
     .comparison table { min-width: 560px; }
     .cta-box { padding: 48px 32px; }
     .hero-image-block { display: none; }
-    .mobile-sticky-cta {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 120;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 10px;
-      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-      background: rgba(13,59,92,0.97);
-      box-shadow: 0 -10px 28px rgba(0,0,0,0.25);
-    }
-    .mobile-sticky-cta a {
-      min-height: 54px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      text-align: center;
-      line-height: 1.2;
-      padding: 0 10px;
-    }
+    .quote-layout { grid-template-columns: 1fr; gap: 40px; }
+    .quote-form-card { padding: 28px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .mobile-sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(13,59,92,0.97); box-shadow: 0 -10px 28px rgba(0,0,0,0.25); }
+    .mobile-sticky-cta a { min-height: 54px; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--white); font-size: 13px; font-weight: 700; text-decoration: none; text-align: center; line-height: 1.2; padding: 0 10px; }
     .mobile-call { background: var(--orange); }
-    .mobile-quote {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .mobile-sticky-cta svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2.3;
-      flex-shrink: 0;
-    }
+    .mobile-quote { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+    .mobile-sticky-cta svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.3; flex-shrink: 0; }
   }
 </style>
+<base target="_blank">
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="site-nav">
   <div class="nav-logo">Arctic<span>Air</span></div>
   <ul class="nav-links">
@@ -1376,77 +265,39 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
-
   <div class="hero-content">
     <div class="hero-layout">
       <div class="hero-copy">
-    <div class="hero-eyebrow">Serving Salt Lake City & Surrounding Areas</div>
-
-    <h1>
-      STAY
-      <em>COOL.</em>
-      STAY <span class="heat">WARM.</span>
-    </h1>
-
-    <p class="hero-sub">Fast HVAC repairs, installs, and emergency service for Salt Lake City homes. Same-day appointments available when your AC, furnace, or heat pump needs help now.</p>
-
-    <div class="hero-actions">
-      <a href="#quote" class="btn-primary">
-        Get Same-Day Estimate
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="tel:+18015550100" class="btn-secondary">
-        <svg viewBox="0 0 44 44">
-          <circle cx="22" cy="22" r="21" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          <path d="M17 14h-2a2 2 0 00-2 2v1a14 14 0 0014 14h1a2 2 0 002-2v-2a1 1 0 00-1-1h-3a1 1 0 00-1 1v.5A9.5 9.5 0 0116.5 18H17a1 1 0 001-1v-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        </svg>
-        (801) 555-0100
-      </a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">18<span>+</span></div>
-        <div class="stat-label">Years in business</div>
+        <div class="hero-eyebrow">Serving Salt Lake City & Surrounding Areas</div>
+        <h1>STAY <em>COOL.</em> STAY <span class="heat">WARM.</span></h1>
+        <p class="hero-sub">Fast HVAC repairs, installs, and emergency service for Salt Lake City homes. Same-day appointments available when your AC, furnace, or heat pump needs help now.</p>
+        <div class="hero-actions">
+          <a href="#quote" class="btn-primary">Get Same-Day Estimate <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="tel:+18015550100" class="btn-secondary">
+            <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><path d="M17 14h-2a2 2 0 00-2 2v1a14 14 0 0014 14h1a2 2 0 002-2v-2a1 1 0 00-1-1h-3a1 1 0 00-1 1v.5A9.5 9.5 0 0116.5 18H17a1 1 0 001-1v-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            (801) 555-0100
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><div class="stat-num">18<span>+</span></div><div class="stat-label">Years in business</div></div>
+          <div class="stat-item"><div class="stat-num">4<span>.9&#9733;</span></div><div class="stat-label">Average rating</div></div>
+          <div class="stat-item"><div class="stat-num">5K<span>+</span></div><div class="stat-label">Happy customers</div></div>
+          <div class="stat-item"><div class="stat-num">2<span>hr</span></div><div class="stat-label">Avg response time</div></div>
+        </div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">4<span>.9★</span></div>
-        <div class="stat-label">Average rating</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">5K<span>+</span></div>
-        <div class="stat-label">Happy customers</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2<span>hr</span></div>
-        <div class="stat-label">Avg response time</div>
-      </div>
-    </div>
-      </div>
-
       <aside class="hero-lead-card" aria-label="Request a free HVAC quote">
         <h2>NEED SERVICE FAST?</h2>
         <p>Tell us what is happening and a local ArcticAir comfort specialist will follow up quickly.</p>
         <form class="lead-form" action="https://formspree.io/f/mlgvykwb" method="POST">
-          <input type="hidden" name="form_source" value="Hero fast-service funnel">
-          <label class="honeypot" for="hero-company">Company</label>
-          <input class="honeypot" id="hero-company" type="text" name="company" tabindex="-1" autocomplete="off">
-          <div class="lead-field">
-            <label for="hero-name">Name</label>
-            <input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
-          </div>
-          <div class="lead-field">
-            <label for="hero-phone">Phone</label>
-            <input id="hero-phone" name="phone" type="tel" autocomplete="tel" placeholder="(801) 555-0100" required>
-          </div>
+          <div class="lead-field"><label for="hero-name">Name</label><input id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+          <div class="lead-field"><label for="hero-phone">Phone</label><input id="hero-phone" name="phone" type="tel" autocomplete="tel" placeholder="(801) 555-0100" required></div>
           <div class="lead-field">
             <label for="hero-issue">Issue Type</label>
-            <select id="hero-issue" name="issue_type" required>
+            <select id="hero-issue" name="issue" required>
               <option value="">Choose service</option>
               <option>AC repair</option>
               <option>Heating repair</option>
@@ -1455,23 +306,10 @@
               <option>Maintenance tune-up</option>
             </select>
           </div>
-          <div class="lead-field">
-            <label for="hero-urgency">How Soon?</label>
-            <select id="hero-urgency" name="urgency" required>
-              <option value="">Choose timing</option>
-              <option>Today</option>
-              <option>This week</option>
-              <option>Planning ahead</option>
-            </select>
-          </div>
-          <div class="lead-field">
-            <label for="hero-zip">ZIP Code</label>
-            <input id="hero-zip" name="zip_code" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84101" required>
-          </div>
-          <button class="btn-primary" type="submit">
-            Get My Free Quote
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          <div class="lead-field"><label for="hero-zip">ZIP Code</label><input id="hero-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84101" required></div>
+          <input type="hidden" name="_subject" value="New ArcticAir HVAC Lead - Hero Form">
+          <input type="hidden" name="_next" value="https://arcticairhvac.com/thank-you">
+          <button class="btn-primary" type="submit">Get My Free Quote <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="lead-note">Same-day service available in most Salt Lake County neighborhoods.</div>
         </form>
       </aside>
@@ -1479,74 +317,46 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div style="max-width:1200px; margin:0 auto;">
     <div class="section-label">What We Do</div>
     <h2 class="section-title">FULL-SERVICE<br>HVAC SOLUTIONS</h2>
     <p class="section-sub">From new installations to emergency repairs, we handle every aspect of your home's comfort system.</p>
-
     <div class="services-grid">
-
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66 4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66 4.24-4.24" stroke-linecap="round"/></svg>
-        </div>
-        <h3>AC Installation</h3>
-        <p>New system installation tailored to your home's square footage, layout, and energy goals. We carry all major brands.</p>
-        <a href="#quote" class="service-link">Get a fast quote →</a>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M4.93 4.93l4.24 4.24m5.66 5.66 4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66 4.24-4.24" stroke-linecap="round"/></svg></div>
+        <h3>AC Installation</h3><p>New system installation tailored to your home's square footage, layout, and energy goals. We carry all major brands.</p>
+        <a href="#quote" class="service-link">Get a fast quote &rarr;</a>
       </div>
-
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>AC Repair</h3>
-        <p>Fast diagnostics and same-day repair on any make or model. Don't sweat it — our techs arrive equipped and ready.</p>
-        <a href="#quote" class="service-link">Book same-day repair →</a>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>AC Repair</h3><p>Fast diagnostics and same-day repair on any make or model. Don't sweat it &mdash; our techs arrive equipped and ready.</p>
+        <a href="#quote" class="service-link">Book same-day repair &rarr;</a>
       </div>
-
       <div class="service-card hot">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 14a5 5 0 01-5 5m0 0a5 5 0 01-5-5m5 5v1m0-11V3m-7 9H3m18 0h-2M6.34 6.34l-.71-.71m13.04 13.04-.71-.71M6.34 17.66l-.71.71m13.04-13.04-.71.71" stroke-linecap="round"/></svg>
-        </div>
-        <h3>Heating Systems</h3>
-        <p>Furnace installation, heat pump upgrades, and boiler maintenance. Stay warm when Utah winters bite hard.</p>
-        <a href="#quote" class="service-link">Book heating inspection →</a>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 14a5 5 0 01-5 5m0 0a5 5 0 01-5-5m5 5v1m0-11V3m-7 9H3m18 0h-2M6.34 6.34l-.71-.71m13.04 13.04-.71-.71M6.34 17.66l-.71.71m13.04-13.04-.71.71" stroke-linecap="round"/></svg></div>
+        <h3>Heating Systems</h3><p>Furnace installation, heat pump upgrades, and boiler maintenance. Stay warm when Utah winters bite hard.</p>
+        <a href="#quote" class="service-link">Book heating inspection &rarr;</a>
       </div>
-
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Preventive Maintenance</h3>
-        <p>Annual tune-ups and filter service plans keep your system running at peak efficiency and extend its lifespan by years.</p>
-        <a href="#quote" class="service-link">Claim system tune-up →</a>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Preventive Maintenance</h3><p>Annual tune-ups and filter service plans keep your system running at peak efficiency and extend its lifespan by years.</p>
+        <a href="#quote" class="service-link">Claim system tune-up &rarr;</a>
       </div>
-
       <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Indoor Air Quality</h3>
-        <p>Air purifiers, humidifiers, and filtration systems that remove allergens, dust, and pollutants from your home.</p>
-        <a href="#quote" class="service-link">Get air quality quote →</a>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Indoor Air Quality</h3><p>Air purifiers, humidifiers, and filtration systems that remove allergens, dust, and pollutants from your home.</p>
+        <a href="#quote" class="service-link">Get air quality quote &rarr;</a>
       </div>
-
       <div class="service-card hot">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Emergency Service</h3>
-        <p>24/7 emergency dispatch for sudden breakdowns. We're on call around the clock — nights, weekends, holidays.</p>
-        <a href="tel:+18015550100" class="service-link">Call now for service →</a>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Emergency Service</h3><p>24/7 emergency dispatch for sudden breakdowns. We're on call around the clock &mdash; nights, weekends, holidays.</p>
+        <a href="tel:+18015550100" class="service-link">Call now for service &rarr;</a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- SERVICE AREAS -->
 <section class="service-areas" id="service-areas">
   <div class="service-areas-inner">
     <div class="areas-layout">
@@ -1567,7 +377,6 @@
   </div>
 </section>
 
-<!-- FINANCING -->
 <section class="financing" id="financing">
   <div class="financing-inner">
     <div class="financing-panel">
@@ -1577,60 +386,32 @@
         <p class="section-sub">HVAC repairs and replacements can be expensive. We help reduce sticker shock with flexible financing options for qualified homeowners.</p>
       </div>
       <div class="financing-points">
-        <div class="financing-point">
-          <strong>$0</strong>
-          <span>Down options available for approved projects</span>
-        </div>
-        <div class="financing-point">
-          <strong>Fast</strong>
-          <span>Simple approval process before install day</span>
-        </div>
-        <div class="financing-point">
-          <strong>Easy</strong>
-          <span>Monthly payment plans for new systems</span>
-        </div>
+        <div class="financing-point"><strong>$0</strong><span>Down options available for approved projects</span></div>
+        <div class="financing-point"><strong>Fast</strong><span>Simple approval process before install day</span></div>
+        <div class="financing-point"><strong>Easy</strong><span>Monthly payment plans for new systems</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST / BEFORE-AFTER -->
 <section class="trust" id="trust">
   <div class="trust-inner">
     <div class="section-label">Before & After</div>
     <h2 class="section-title">SEE THE<br>DIFFERENCE</h2>
     <p class="section-sub" style="margin-bottom:40px;">Real Salt Lake City results from worn-out, inefficient units to modern systems that cut energy bills by up to 40%.</p>
-
     <div class="trust-badges" aria-label="Trust badges">
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Financing Available
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.2-2.8 8.1-7 10-4.2-1.9-7-5.8-7-10V6l7-3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        BBB Accredited
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 19.9l1.1-6.5-4.7-4.6 6.5-.9L12 2z" stroke-linejoin="round"/></svg>
-        Google Guaranteed
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M6 3h12v5a6 6 0 01-12 0V3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        EPA Certified
-      </div>
-      <div class="trust-badge">
-        <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Same-Day Service
-      </div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Financing Available</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.2-2.8 8.1-7 10-4.2-1.9-7-5.8-7-10V6l7-3z" stroke-linecap="round" stroke-linejoin="round"/></svg>BBB Accredited</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 19.9l1.1-6.5-4.7-4.6 6.5-.9L12 2z" stroke-linejoin="round"/></svg>Google Guaranteed</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M6 3h12v5a6 6 0 01-12 0V3z" stroke-linecap="round" stroke-linejoin="round"/></svg>EPA Certified</div>
+      <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>Same-Day Service</div>
     </div>
 
     <div class="before-after-wrap">
-      <!-- BEFORE -->
       <div class="ba-panel ba-panel-before">
         <span class="ba-label">Before</span>
         <div class="ba-interior">
           <div class="ba-old-unit">
-            <!-- Old rusty AC unit illustration -->
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="10" y="20" width="80" height="60" rx="6" fill="#3a4a58" stroke="#4a5a68" stroke-width="2"/>
               <rect x="18" y="30" width="20" height="40" rx="3" fill="#2d3a45"/>
@@ -1652,15 +433,13 @@
           </div>
         </div>
       </div>
-
-      <!-- AFTER -->
       <div class="ba-panel ba-panel-after">
         <span class="ba-label">After</span>
         <div class="ba-interior">
           <div class="ba-new-unit">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="10" y="18" width="80" height="64" rx="10" fill="#1A6FA3" stroke="#2196D3" stroke-width="1.5"/>
-              <rect x="18" y="26" width="64" height="44" rx="6" fill="#1260911a"/>
+              <rect x="18" y="26" width="64" height="44" rx="6" fill="rgba(18,96,145,0.1)"/>
               <rect x="22" y="30" width="56" height="6" rx="3" fill="rgba(33,150,211,0.3)"/>
               <rect x="22" y="40" width="56" height="6" rx="3" fill="rgba(33,150,211,0.3)"/>
               <rect x="22" y="50" width="56" height="6" rx="3" fill="rgba(33,150,211,0.3)"/>
@@ -1674,11 +453,7 @@
           </div>
         </div>
       </div>
-
-      <!-- Divider pill -->
-      <div class="ba-divider">
-        <svg viewBox="0 0 24 24"><path d="M5 12h14" stroke-linecap="round"/><path d="M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
+      <div class="ba-divider"><svg viewBox="0 0 24 24"><path d="M5 12h14" stroke-linecap="round"/><path d="M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </div>
 
     <div class="customer-story">
@@ -1687,18 +462,9 @@
         <span class="customer-story-tag">Sandy, Utah</span>
       </div>
       <div class="story-grid">
-        <div class="story-step">
-          <span>Before</span>
-          <p>AC constantly breaking, uneven bedrooms, and a $240 monthly summer bill.</p>
-        </div>
-        <div class="story-step">
-          <span>Solution</span>
-          <p>Installed a high-efficiency heat pump with new thermostat controls.</p>
-        </div>
-        <div class="story-step">
-          <span>After</span>
-          <p>Energy bill dropped 40% and the home stayed comfortable room to room.</p>
-        </div>
+        <div class="story-step"><span>Before</span><p>AC constantly breaking, uneven bedrooms, and a $240 monthly summer bill.</p></div>
+        <div class="story-step"><span>Solution</span><p>Installed a high-efficiency heat pump with new thermostat controls.</p></div>
+        <div class="story-step"><span>After</span><p>Energy bill dropped 40% and the home stayed comfortable room to room.</p></div>
       </div>
     </div>
 
@@ -1708,57 +474,34 @@
         <p>Homeowners compare speed, warranties, and surprise fees before they book. Here is how ArcticAir stacks up.</p>
       </div>
       <table>
-        <thead>
-          <tr>
-            <th>Service Promise</th>
-            <th>ArcticAir</th>
-            <th>Other Companies</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Service Promise</th><th>ArcticAir</th><th>Other Companies</th></tr></thead>
         <tbody>
-          <tr>
-            <td>Same-Day Service</td>
-            <td><span class="status good">&#10003; Yes</span></td>
-            <td><span class="status bad">&#10007; No</span></td>
-          </tr>
-          <tr>
-            <td>Financing</td>
-            <td><span class="status good">&#10003; Available</span></td>
-            <td><span class="status maybe">Sometimes</span></td>
-          </tr>
-          <tr>
-            <td>10-Year Warranty</td>
-            <td><span class="status good">&#10003; Included</span></td>
-            <td><span class="status bad">&#10007; Rarely</span></td>
-          </tr>
-          <tr>
-            <td>Emergency Calls</td>
-            <td><span class="status good">&#10003; 24/7</span></td>
-            <td><span class="status maybe">Extra fees</span></td>
-          </tr>
+          <tr><td>Same-Day Service</td><td><span class="status good">&#10003; Yes</span></td><td><span class="status bad">&#10007; No</span></td></tr>
+          <tr><td>Financing</td><td><span class="status good">&#10003; Available</span></td><td><span class="status maybe">Sometimes</span></td></tr>
+          <tr><td>10-Year Warranty</td><td><span class="status good">&#10003; Included</span></td><td><span class="status bad">&#10007; Rarely</span></td></tr>
+          <tr><td>Emergency Calls</td><td><span class="status good">&#10003; 24/7</span></td><td><span class="status maybe">Extra fees</span></td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Trust pillars -->
     <div class="trust-grid">
       <div class="trust-card">
-        <div class="trust-card-icon">🏅</div>
+        <div class="trust-card-icon">&#127941;</div>
         <h4>NATE Certified Techs</h4>
-        <p>All technicians are North American Technician Excellence certified — the gold standard in HVAC training.</p>
+        <p>All technicians are North American Technician Excellence certified &mdash; the gold standard in HVAC training.</p>
       </div>
       <div class="trust-card">
-        <div class="trust-card-icon">🛡️</div>
+        <div class="trust-card-icon">&#128737;</div>
         <h4>10-Year Labor Warranty</h4>
         <p>We stand behind every installation with an industry-leading 10-year labor warranty, no asterisks.</p>
       </div>
       <div class="trust-card">
-        <div class="trust-card-icon">💰</div>
+        <div class="trust-card-icon">&#128176;</div>
         <h4>Price Match Guarantee</h4>
         <p>Found a lower written quote from a licensed competitor? We'll beat it by 5%, guaranteed.</p>
       </div>
       <div class="trust-card">
-        <div class="trust-card-icon">⚡</div>
+        <div class="trust-card-icon">&#9889;</div>
         <h4>Same-Day Dispatch</h4>
         <p>Call before 2pm and we'll have a tech at your door the same day for most service calls.</p>
       </div>
@@ -1766,154 +509,178 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="reviews" id="reviews">
   <div style="max-width:1200px; margin:0 auto;">
     <div class="section-label">Customer Reviews</div>
     <h2 class="section-title">WHAT OUR<br>CUSTOMERS SAY</h2>
-
     <div class="reviews-grid">
-
       <div class="review-card">
-        <div class="stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
+        <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
         <p class="review-text">"ArcticAir replaced our 20-year-old furnace in one day. The techs were respectful, clean, and explained everything. Our heating bill dropped by $90 the very first month."</p>
         <div class="reviewer">
           <div class="reviewer-avatar" style="background: var(--blue-mid);">JM</div>
-          <div>
-            <div class="reviewer-name">Jessica M.</div>
-            <div class="reviewer-loc">Salt Lake City, UT</div>
-          </div>
+          <div><div class="reviewer-name">Jessica M.</div><div class="reviewer-loc">Salt Lake City, UT</div></div>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <p class="review-text">"AC went out at 9pm during a heat wave. Called ArcticAir and they had someone here by 11. Fixed in under an hour. Genuinely impressed — these guys are the real deal."</p>
+        <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="review-text">"AC went out at 9pm during a heat wave. Called ArcticAir and they had someone here by 11. Fixed in under an hour. Genuinely impressed &mdash; these guys are the real deal."</p>
         <div class="reviewer">
           <div class="reviewer-avatar" style="background: #0F6E56;">TR</div>
-          <div>
-            <div class="reviewer-name">Tyler R.</div>
-            <div class="reviewer-loc">West Jordan, UT</div>
-          </div>
+          <div><div class="reviewer-name">Tyler R.</div><div class="reviewer-loc">West Jordan, UT</div></div>
         </div>
       </div>
-
       <div class="review-card">
-        <div class="stars">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
-        <p class="review-text">"Been using ArcticAir for annual maintenance for 6 years. They catch small issues before they become expensive ones. Highly recommend their service plan — worth every penny."</p>
+        <div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+        <p class="review-text">"Been using ArcticAir for annual maintenance for 6 years. They catch small issues before they become expensive ones. Highly recommend their service plan &mdash; worth every penny."</p>
         <div class="reviewer">
           <div class="reviewer-avatar" style="background: #993C1D;">SK</div>
-          <div>
-            <div class="reviewer-name">Sandra K.</div>
-            <div class="reviewer-loc">Murray, UT</div>
-          </div>
+          <div><div class="reviewer-name">Sandra K.</div><div class="reviewer-loc">Murray, UT</div></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="quote">
+<!-- NEW FULL QUOTE FORM SECTION -->
+<section class="quote-section" id="quote">
+  <div class="quote-section-inner">
+    <div class="quote-layout">
+      <div class="quote-info">
+        <div class="section-label">Free HVAC Inspection</div>
+        <h2>CLAIM YOUR FREE<br>SYSTEM EVALUATION</h2>
+        <p>Tell us what is going on and we will give you a fast, clear estimate with same-day options when available. No pressure, no surprises, no hidden fees.</p>
+        <div class="quote-benefits">
+          <div class="quote-benefit">
+            <div class="quote-benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>No Obligation Quote</h4>
+              <p>Get a detailed estimate with zero pressure to buy. We believe in honest, upfront pricing.</p>
+            </div>
+          </div>
+          <div class="quote-benefit">
+            <div class="quote-benefit-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>Same-Day Response</h4>
+              <p>Submit before 2pm and a comfort specialist will reach out the same business day.</p>
+            </div>
+          </div>
+          <div class="quote-benefit">
+            <div class="quote-benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>Licensed & Insured</h4>
+              <p>Every technician is background-checked, EPA certified, and fully insured for your peace of mind.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-form-card">
+        <h3>GET STARTED NOW</h3>
+        <p class="form-subtitle">Fill out the form below and we will contact you within 2 hours.</p>
+
+        <div id="form-message" class="form-message"></div>
+
+        <form id="quote-form" class="quote-form" action="https://formspree.io/f/mlgvykwb" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qf-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="qf-name" name="name" placeholder="John Smith" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="qf-phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="qf-phone" name="phone" placeholder="(801) 555-0100" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qf-email">Email Address</label>
+              <input type="email" id="qf-email" name="email" placeholder="john@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="qf-zip">ZIP Code <span class="required">*</span></label>
+              <input type="text" id="qf-zip" name="zip" placeholder="84101" inputmode="numeric" autocomplete="postal-code" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qf-service">Service Needed <span class="required">*</span></label>
+              <select id="qf-service" name="service_needed" required>
+                <option value="">Select a service...</option>
+                <option value="ac_repair">AC Repair</option>
+                <option value="ac_install">AC Installation</option>
+                <option value="heating_repair">Heating Repair</option>
+                <option value="heating_install">Heating Installation</option>
+                <option value="heat_pump">Heat Pump Service</option>
+                <option value="maintenance">Preventive Maintenance</option>
+                <option value="air_quality">Indoor Air Quality</option>
+                <option value="emergency">Emergency Service</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="qf-urgency">How Urgent?</label>
+              <select id="qf-urgency" name="urgency">
+                <option value="flexible">Flexible - within a week</option>
+                <option value="soon">Soon - within 2-3 days</option>
+                <option value="urgent">Urgent - same day needed</option>
+                <option value="emergency">Emergency - system is down</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="qf-message">Tell Us About Your Issue</label>
+            <textarea id="qf-message" name="message" placeholder="e.g., AC is blowing warm air, furnace making loud noises, looking to replace a 15-year-old unit..."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New ArcticAir HVAC Lead - Main Quote Form">
+          <input type="hidden" name="_next" value="https://arcticairhvac.com/thank-you">
+
+          <button type="submit" class="btn-primary form-submit">
+            Claim Free System Evaluation
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <p class="form-privacy">
+            By submitting, you agree to our <a href="#">Privacy Policy</a>. We never share your information with third parties.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
   <div style="max-width:1200px; margin:0 auto;">
     <div class="cta-box">
       <div class="cta-content">
-        <span class="cta-badge">No Obligation · 100% Free</span>
+        <span class="cta-badge">No Obligation &middot; 100% Free</span>
         <h2>BOOK YOUR FREE<br>HVAC INSPECTION</h2>
         <p>Tell us what is going on and we will give you a fast, clear estimate with same-day options when available. No pressure, no surprises, no hidden fees.</p>
-        <div class="funnel-steps" aria-label="Appointment funnel steps">
-          <div class="funnel-step">
-            <strong>Step 1</strong>
-            <span>Choose the service</span>
-          </div>
-          <div class="funnel-step">
-            <strong>Step 2</strong>
-            <span>Pick the urgency</span>
-          </div>
-          <div class="funnel-step">
-            <strong>Step 3</strong>
-            <span>Get a callback</span>
-          </div>
-        </div>
       </div>
-      <form class="quote-funnel-card" action="https://formspree.io/f/mlgvykwb" method="POST" aria-label="HVAC appointment request form">
-        <h3>REQUEST APPOINTMENT</h3>
-        <p>Answer a few quick questions and our scheduler will contact you with the fastest available appointment.</p>
-        <input type="hidden" name="form_source" value="Main appointment funnel">
-        <label class="honeypot" for="quote-company">Company</label>
-        <input class="honeypot" id="quote-company" type="text" name="company" tabindex="-1" autocomplete="off">
-        <div class="quote-form-grid">
-          <div class="lead-field full">
-            <label for="quote-service">What do you need?</label>
-            <select id="quote-service" name="service_type" required>
-              <option value="">Choose a service</option>
-              <option>AC repair</option>
-              <option>Furnace repair</option>
-              <option>Heat pump installation</option>
-              <option>Full system replacement</option>
-              <option>Maintenance tune-up</option>
-              <option>Indoor air quality</option>
-            </select>
-          </div>
-          <div class="lead-field full">
-            <label>How urgent is it?</label>
-            <div class="radio-row">
-              <label class="radio-option">
-                <input type="radio" name="urgency" value="Today" required>
-                <span>Today</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="urgency" value="This week">
-                <span>This week</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="urgency" value="Planning ahead">
-                <span>Planning ahead</span>
-              </label>
-            </div>
-          </div>
-          <div class="lead-field">
-            <label for="quote-name">Name</label>
-            <input id="quote-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
-          </div>
-          <div class="lead-field">
-            <label for="quote-phone">Phone</label>
-            <input id="quote-phone" name="phone" type="tel" autocomplete="tel" placeholder="(801) 555-0100" required>
-          </div>
-          <div class="lead-field">
-            <label for="quote-email">Email</label>
-            <input id="quote-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
-          </div>
-          <div class="lead-field">
-            <label for="quote-zip">ZIP Code</label>
-            <input id="quote-zip" name="zip_code" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="84101" required>
-          </div>
-          <div class="lead-field full">
-            <label for="quote-message">What is happening?</label>
-            <textarea id="quote-message" name="message" placeholder="Example: AC is blowing warm air and the unit is making noise."></textarea>
-          </div>
-        </div>
-        <button class="btn-primary" type="submit">
-          Send My Appointment Request
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <p class="cta-note">Or call <strong>(801) 555-0100</strong></p>
-      </form>
+      <div class="cta-action">
+        <a href="tel:+18015550100" class="btn-white">
+          Call (801) 555-0100
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7A2 2 0 0122 16.9z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="cta-note" style="color:rgba(255,255,255,0.6); margin-top:14px; font-size:13px; text-align:center;">Or <a href="#quote" style="color:white; font-weight:700;">fill out the form above</a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Arctic<span>Air</span></div>
-  <p>© 2026 ArcticAir HVAC · Salt Lake City, UT · Licensed & Insured</p>
+  <p>&copy; 2026 ArcticAir HVAC &middot; Salt Lake City, UT &middot; Licensed & Insured</p>
   <nav>
     <a href="#services">Services</a>
     <a href="#service-areas">Areas</a>
@@ -1934,6 +701,45 @@
     Get Free Quote
   </a>
 </div>
+
+<script>
+  // Formspree AJAX submission for the main quote form
+  document.getElementById('quote-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var msg = document.getElementById('form-message');
+    var btn = form.querySelector('button[type="submit"]');
+    var originalText = btn.innerHTML;
+
+    msg.className = 'form-message loading';
+    msg.textContent = 'Sending your request...';
+    btn.disabled = true;
+    btn.innerHTML = 'Sending...';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (response.ok) {
+        msg.className = 'form-message success';
+        msg.textContent = 'Thank you! Your request has been sent. An ArcticAir specialist will contact you within 2 hours.';
+        form.reset();
+      } else {
+        response.json().then(function(data) {
+          msg.className = 'form-message error';
+          msg.textContent = data.errors ? data.errors.map(function(e) { return e.message; }).join(', ') : 'Oops! Something went wrong. Please try again or call us directly.';
+        });
+      }
+    }).catch(function(error) {
+      msg.className = 'form-message error';
+      msg.textContent = 'Network error. Please try again or call (801) 555-0100.';
+    }).finally(function() {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    });
+  });
+</script>
 
 </body>
 </html>
