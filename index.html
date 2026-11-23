@@ -3,45 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Solfera — Applied automation for contractor businesses</title>
-<meta name="description" content="Solfera installs working systems inside contractor businesses: intake, dispatch, quoting, follow-up, reviews, missed-call recovery, scheduling. The phone gets answered. The calendar fills.">
-<meta name="theme-color" content="#F7F5F0">
-<meta name="color-scheme" content="light">
-<meta property="og:title" content="Solfera — Applied automation for contractor businesses">
-<meta property="og:description" content="Working systems for intake, dispatch, quoting, follow-up, reviews, and scheduling. Installed to your rules. Running unattended.">
+<title>Solfera — Applied automation systems for local service businesses</title>
+<meta name="description" content="Solfera installs working operational systems inside local service businesses: missed-call recovery, quote follow-up, review management, scheduling. Book a free operations audit.">
+<meta name="theme-color" content="#08141F">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Solfera — Applied automation systems for local service businesses">
+<meta property="og:description" content="Intake, quoting, follow-up, and scheduling that run 24/7. Recover the revenue leaking out of your business. Book a free operations audit.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C1C1A'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23F7F5F0' stroke-width='1.5'/%3E%3Cpath d='M4 19h24' stroke='%23F7F5F0' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308141F'/%3E%3Ccircle cx='16' cy='15' r='8' fill='none' stroke='%233BE7E7' stroke-width='1.5'/%3E%3Cpath d='M4 20h24' stroke='%233BE7E7' stroke-width='1.5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 <style>
 /* ==========================================================
-   SOLFERA — design system
+   SOLFERA — applied automation / industrial control panel
+   Deep navy · crisp white · electric cyan
    ========================================================== */
 :root{
-  color-scheme:light;
-  /* colour */
-  --bone:#F7F5F0;
-  --bone-2:#EFEBE2;
-  --plate:#E8E3D8;
-  --ink:#1C1C1A;
-  --ink-70:rgba(28,28,26,.72);
-  --ink-55:rgba(28,28,26,.56);
-  --accent:#5B6B6A;
-  --accent-light:#9FB0AE;
-  --line:rgba(28,28,26,.13);
-  --line-strong:rgba(28,28,26,.26);
-  --bone-line:rgba(247,245,240,.17);
-  --bone-70:rgba(247,245,240,.72);
-  --bone-55:rgba(247,245,240,.54);
+  color-scheme:dark;
+  --navy:#08141F;
+  --navy-deep:#050E16;
+  --navy-2:#0B1C2A;
+  --navy-3:#102638;
+  --paper:#F2F7FA;
+  --paper-2:#E3EDF4;
+  --white:#F7FBFD;
+  --ink:#08141F;
+  --cyan:#3BE7E7;
+  --cyan-ink:#0A6570;
+  --muted:rgba(247,251,253,.7);
+  --muted-soft:rgba(247,251,253,.56);
+  --line:rgba(247,251,253,.14);
+  --line-strong:rgba(247,251,253,.3);
 
-  /* type */
   --font-display:"Inter Tight","Helvetica Neue",Arial,sans-serif;
   --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 
-  /* space */
   --space-3xs:.25rem;
   --space-2xs:.5rem;
   --space-xs:.75rem;
@@ -52,21 +51,18 @@
   --space-2xl:4rem;
   --space-3xl:6rem;
   --gutter:clamp(1.25rem,4vw,2.5rem);
-  --section-y:clamp(5rem,10vw,10rem);
+  --section-y:clamp(4.5rem,9vw,8rem);
   --container:76rem;
-  --header-h:4.5rem;
-
-  /* misc */
+  --header-h:4.25rem;
   --ease:cubic-bezier(.22,.61,.36,1);
-  --radius:0px;
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5.5rem}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
 body{
   margin:0;
-  background:var(--bone);
-  color:var(--ink);
+  background:var(--navy);
+  color:var(--white);
   font-family:var(--font-body);
   font-size:clamp(1rem,.96rem + .2vw,1.0625rem);
   line-height:1.7;
@@ -79,102 +75,102 @@ a{color:inherit}
 ul,ol{margin:0;padding:0;list-style:none}
 h1,h2,h3,p,dl,dd,figure,fieldset{margin:0}
 fieldset{border:0;padding:0}
-::selection{background:var(--accent);color:var(--bone)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.proof :focus-visible{outline-color:var(--accent-light)}
+::selection{background:var(--cyan);color:var(--ink)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.section--paper :focus-visible{outline-color:var(--cyan-ink)}
 
 h1,h2,h3{
   font-family:var(--font-display);
   font-weight:500;
-  letter-spacing:-.03em;
+  letter-spacing:-.032em;
   line-height:1.05;
   text-wrap:balance;
 }
-h2{font-size:clamp(2rem,1.3rem + 2.9vw,3.5rem);line-height:1.03}
+h2{font-size:clamp(1.95rem,1.35rem + 2.5vw,3.15rem);line-height:1.04}
 h3{letter-spacing:-.02em}
-.muted{color:var(--ink-70)}
+.muted{color:var(--muted)}
 .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
-.mono{font-family:var(--font-mono);letter-spacing:.08em}
-.section{padding-block:var(--section-y);border-top:1px solid var(--line)}
+.mono{font-family:var(--font-mono);letter-spacing:.1em}
+.section{padding-block:var(--section-y);border-top:1px solid var(--line);position:relative}
+.section--paper{
+  background:var(--paper);
+  color:var(--ink);
+  --muted:rgba(8,20,31,.72);
+  --muted-soft:rgba(8,20,31,.62);
+  --line:rgba(8,20,31,.14);
+  --line-strong:rgba(8,20,31,.3);
+  border-top-color:rgba(8,20,31,.16);
+}
 .lede{
-  max-width:35rem;
+  max-width:36rem;
   font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);
   line-height:1.65;
-  color:var(--ink-70);
+  color:var(--muted);
 }
 .marker{
-  display:flex;align-items:center;gap:.6rem;
-  margin-bottom:clamp(1.75rem,3.5vw,2.75rem);
+  display:flex;align-items:center;gap:.65rem;
+  margin-bottom:clamp(1.5rem,3vw,2.25rem);
   font-family:var(--font-mono);
   font-size:.6875rem;font-weight:500;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--accent);
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cyan);
 }
-.marker::before{content:"";width:6px;height:6px;flex:none;background:currentColor}
-.section-head{
-  display:grid;gap:1.5rem;
-  margin-bottom:clamp(2.5rem,5vw,4rem);
-}
-.section-head h2{max-width:20ch}
-.section-head .lede{max-width:31rem;align-self:end}
-
+.marker::before{content:"";width:7px;height:7px;flex:none;background:currentColor}
+.section--paper .marker{color:var(--cyan-ink)}
+.section-head{display:grid;gap:1.25rem;margin-bottom:clamp(2.25rem,4.5vw,3.5rem)}
+.section-head h2{max-width:24ch}
 @media (min-width:900px){
   .section-head{grid-template-columns:1.15fr .85fr;gap:clamp(2.5rem,6vw,6rem);align-items:end}
+  .section-head .lede{max-width:30rem}
 }
 
 /* ---------- skip link ---------- */
 .skip-link{
   position:fixed;top:.75rem;left:.75rem;z-index:200;
   transform:translateY(-200%);
-  background:var(--ink);color:var(--bone);
-  padding:.75rem 1rem;text-decoration:none;
-  font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;
-  transition:transform .2s var(--ease);
+  background:var(--cyan);color:var(--ink);
+  padding:.7rem 1rem;text-decoration:none;
+  font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;
 }
 .skip-link:focus{transform:none}
 
 /* ---------- header ---------- */
 .site-header{
   position:sticky;top:0;z-index:100;
-  background:var(--bone);
+  background:rgba(8,20,31,.96);
   border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
 }
+.site-header::before{
+  content:"";position:absolute;top:0;left:0;
+  width:clamp(70px,12vw,150px);height:2px;background:var(--cyan);
+}
+.site-header.is-scrolled{box-shadow:0 14px 34px rgba(0,0,0,.35)}
 .site-header__inner{
   display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
   min-height:var(--header-h);
 }
-.site-header.is-scrolled{box-shadow:0 10px 30px rgba(28,28,26,.045)}
-.logo{
-  display:inline-flex;align-items:center;gap:.6rem;
-  color:var(--ink);text-decoration:none;
-  flex:none;
-}
-.logo__mark{width:22px;height:22px;flex:none}
+.logo{display:inline-flex;align-items:center;gap:.6rem;flex:none;text-decoration:none;color:var(--white)}
+.logo__mark{width:22px;height:22px;flex:none;color:var(--cyan)}
 .logo__word{
   font-family:var(--font-display);
-  font-size:.8125rem;font-weight:600;
-  letter-spacing:.22em;
+  font-size:.8125rem;font-weight:600;letter-spacing:.24em;
 }
 .button.header__cta{display:none}
-@media (min-width:900px){
-  .button.header__cta{display:inline-flex}
-}
+@media (min-width:1000px){.button.header__cta{display:inline-flex}}
 .nav-toggle{
   display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
   width:2.75rem;height:2.75rem;margin-right:-.6rem;
   padding:.75rem;background:none;border:0;cursor:pointer;
 }
-.nav-toggle span{
-  display:block;width:20px;height:1.5px;background:var(--ink);
-  transition:transform .25s var(--ease),opacity .25s var(--ease);
-}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:var(--white);transition:transform .25s var(--ease),opacity .25s var(--ease)}
 .nav-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.25px) rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
 .nav{
   position:fixed;top:var(--header-h);left:0;right:0;z-index:90;
   max-height:calc(100dvh - var(--header-h));overflow-y:auto;
   padding:1rem var(--gutter) 2rem;
-  background:var(--bone);
+  background:var(--navy);
   border-bottom:1px solid var(--line);
   opacity:0;visibility:hidden;transform:translateY(-.5rem);
   transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;
@@ -184,514 +180,658 @@ h3{letter-spacing:-.02em}
 .nav__link{
   display:block;padding:1rem 0;
   border-bottom:1px solid var(--line);
-  color:var(--ink);text-decoration:none;font-size:1.0625rem;
+  color:var(--white);text-decoration:none;font-size:1.0625rem;
 }
-.nav__link:hover{color:var(--accent)}
+.nav__link:hover{color:var(--cyan)}
 .nav__cta{margin-top:1.5rem;width:100%;justify-content:center}
-@media (max-width:899px){
-  body.nav-open{overflow:hidden}
-}
-@media (min-width:900px){
+@media (max-width:999px){body.nav-open{overflow:hidden}}
+@media (min-width:1000px){
   .nav{
     position:static;max-height:none;overflow:visible;
-    margin-left:auto;padding:0;
-    background:none;border:0;
+    margin-left:auto;padding:0;background:none;border:0;
     opacity:1;visibility:visible;transform:none;
   }
-  .nav__list{flex-direction:row;align-items:center;gap:clamp(1.5rem,2.4vw,2.5rem)}
+  .nav__list{flex-direction:row;align-items:center;gap:clamp(1.25rem,2.2vw,2.25rem)}
   .nav__link{
-    padding:.4rem 0;border:0;
-    font-size:.875rem;color:var(--ink-70);
-    transition:color .2s;
+    padding:.35rem 0;border:0;
+    font-family:var(--font-mono);
+    font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);transition:color .2s;
   }
-  .nav__link:hover{color:var(--ink)}
+  .nav__link:hover{color:var(--cyan)}
   .nav .nav__cta{display:none}
   .nav-toggle{display:none}
 }
 
-/* ---------- buttons + links ---------- */
+/* ---------- buttons ---------- */
 .button{
-  display:inline-flex;align-items:center;justify-content:center;gap:.75rem;
-  padding:1.05rem 1.5rem;
-  background:var(--ink);color:var(--bone);
-  border:1px solid var(--ink);border-radius:var(--radius);
-  font-size:.9375rem;line-height:1;text-decoration:none;
-  transition:background-color .25s,color .25s,border-color .25s;
+  display:inline-flex;align-items:center;justify-content:center;gap:.7rem;
+  padding:1rem 1.35rem;
+  background:var(--cyan);color:var(--ink);
+  border:1px solid var(--cyan);border-radius:0;
+  font-family:var(--font-mono);
+  font-size:.75rem;font-weight:500;line-height:1.1;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  transition:background-color .22s,color .22s,border-color .22s;
 }
-.button:hover{background:#353531;border-color:#353531;color:var(--bone)}
+.button:hover{background:var(--white);border-color:var(--white);color:var(--ink)}
 .button svg{width:15px;height:15px;flex:none;transition:transform .3s var(--ease)}
 .button:hover svg{transform:translateX(3px)}
-.button--sm{padding:.7rem 1rem;font-size:.8125rem;gap:.55rem}
-.button--sm svg{width:13px;height:13px}
-.link{
-  text-decoration:underline;
-  text-decoration-thickness:1px;
-  text-underline-offset:.25em;
-  text-decoration-color:var(--line-strong);
-  transition:color .2s,text-decoration-color .2s;
-}
-.link:hover{color:var(--accent);text-decoration-color:currentColor}
+.button--sm{padding:.65rem .9rem;font-size:.625rem;gap:.5rem}
+.button--sm svg{width:12px;height:12px}
+.button--ghost{background:transparent;color:var(--white);border-color:var(--line-strong)}
+.button--ghost:hover{background:transparent;border-color:var(--cyan);color:var(--cyan)}
+.section--paper .button--ghost{color:var(--ink);border-color:var(--line-strong)}
+.section--paper .button--ghost:hover{border-color:var(--cyan-ink);color:var(--cyan-ink)}
+.link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.25em;text-decoration-color:var(--line-strong);transition:color .2s,text-decoration-color .2s}
+.link:hover{color:var(--cyan);text-decoration-color:currentColor}
+.section--paper .link:hover{color:var(--cyan-ink)}
 
 /* ---------- hero ---------- */
-.hero{padding-block:clamp(3.5rem,7vw,6rem) clamp(4rem,8vw,7rem)}
-.hero__grid{
-  display:grid;gap:clamp(3rem,6vw,5rem);
-  align-items:center;
+.hero{
+  position:relative;overflow:hidden;
+  padding-block:clamp(3rem,6vw,5rem) clamp(4rem,7vw,6.5rem);
+  background:
+    radial-gradient(ellipse 60% 55% at 78% 18%,rgba(59,231,231,.09),transparent 70%),
+    var(--navy);
 }
-.hero__head{text-align:center}
-.hero__head .eyebrow{justify-content:center}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(247,251,253,.05) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(247,251,253,.05) 1px,transparent 1px);
+  background-size:84px 84px;
+  mask-image:radial-gradient(ellipse 85% 75% at 65% 25%,#000 15%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 85% 75% at 65% 25%,#000 15%,transparent 100%);
+}
+.hero .container{position:relative;z-index:1}
+.hero__grid{display:grid;gap:clamp(2.25rem,4vw,3rem)}
+.hero__head{margin-bottom:clamp(.5rem,1vw,1rem)}
 .eyebrow{
   display:flex;align-items:center;gap:.6rem;
-  margin-bottom:clamp(1.5rem,3vw,2.25rem);
+  margin-bottom:clamp(1.25rem,2.5vw,1.75rem);
   font-family:var(--font-mono);
-  font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-70);
+  font-size:.6563rem;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--muted);
 }
-.eyebrow__dot{width:5px;height:5px;flex:none;background:var(--accent)}
+.eyebrow__dot{width:6px;height:6px;flex:none;background:var(--cyan);box-shadow:0 0 10px rgba(59,231,231,.7)}
 .hero__title{
-  max-width:22ch;
-  margin-inline:auto;
-  margin-bottom:0;
-  font-size:clamp(2.5rem,1.5rem + 5.2vw,4.75rem);
-  line-height:1.02;letter-spacing:-.035em;
+  max-width:20ch;
+  font-size:clamp(2.55rem,1.35rem + 4.9vw,4.85rem);
+  line-height:1.02;letter-spacing:-.04em;
 }
-.hero__title-sub{display:block;color:var(--ink-70)}
+.hero__title span{color:var(--cyan)}
 .hero__sub{
-  max-width:33rem;
-  margin-bottom:clamp(2rem,4vw,2.75rem);
+  max-width:34rem;
+  margin-bottom:clamp(1.75rem,3.5vw,2.4rem);
   font-size:clamp(1.0625rem,1rem + .35vw,1.1875rem);
-  line-height:1.65;color:var(--ink-70);
+  line-height:1.65;color:var(--muted);
 }
-.hero__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:clamp(1.75rem,3.5vw,2.25rem)}
-.hero__meta{
-  display:flex;flex-wrap:wrap;gap:.35rem .6rem;
-  font-family:var(--font-mono);
-  font-size:.6875rem;line-height:1.8;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--ink-70);
-}
-.hero__meta span[aria-hidden]{color:var(--accent)}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:clamp(1.75rem,3.5vw,2.25rem)}
 @media (max-width:599px){
-  .hero__meta{flex-direction:column;gap:.15rem}
+  .hero__actions{flex-direction:column;align-items:stretch}
+  .hero__actions .button{width:100%;padding-inline:1rem;font-size:.6875rem;letter-spacing:.1em}
+}
+.hero__meta{
+  display:flex;flex-wrap:wrap;gap:.35rem .65rem;
+  font-family:var(--font-mono);
+  font-size:.625rem;line-height:1.8;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.hero__meta span[aria-hidden]{color:var(--cyan)}
+@media (max-width:599px){
+  .hero__meta{flex-direction:column;gap:.2rem}
   .hero__meta span[aria-hidden]{display:none}
 }
-
-/* ---------- instrument plate ---------- */
-.plate-wrap{
-  width:100%;max-width:31rem;margin:0;justify-self:start;
-}
-.plate{
-  position:relative;isolation:isolate;
-  aspect-ratio:4/5;overflow:hidden;
-  background:var(--plate);
-  border:1px solid var(--line-strong);
-}
-.plate__art{position:absolute;inset:0;width:100%;height:100%}
-.plate__top{
-  position:absolute;top:0;left:0;right:0;
-  display:flex;justify-content:space-between;gap:1rem;
-  padding:1rem 1.1rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(28,28,26,.74);
-}
-.plate__readout{
-  position:absolute;left:1rem;right:auto;bottom:1rem;
-  width:calc(100% - 2rem);max-width:19.5rem;
-  padding:.9rem 1rem 1rem;
-  background:rgba(247,245,240,.95);
-  border:1px solid var(--line-strong);
-  font-family:var(--font-mono);
-}
-@media (min-width:600px){
-  .plate__readout{left:auto;right:1rem;width:19.5rem}
-}
-.plate__readout-head{
-  display:flex;justify-content:space-between;gap:1rem;
-  padding-bottom:.7rem;
-  font-size:.625rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-70);
-}
-.plate__rows>div{
-  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-  padding:.45rem 0;
-  border-top:1px solid var(--line);
-}
-.plate__rows dt{
-  font-size:.625rem;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink-70);
-}
-.plate__rows dd{
-  margin:0;
-  font-size:.8125rem;font-weight:500;letter-spacing:.04em;
-  font-variant-numeric:tabular-nums;
-}
-.plate__status{
-  display:flex;align-items:center;gap:.5rem;
-  margin-top:.7rem;
-  font-size:.5625rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--accent);
-}
-.pulse{width:5px;height:5px;flex:none;border-radius:50%;background:currentColor}
-.plate__caption{
-  margin-top:.75rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--ink-70);
-}
-@media (min-width:600px) and (max-width:999px){
-  .plate-wrap{justify-self:center;max-width:30rem}
-}
 @media (min-width:1000px){
-  .hero__grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:start}
+  .hero__grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);column-gap:clamp(3rem,6vw,5.5rem);align-items:start}
   .hero__head{grid-column:1/-1}
-  .plate-wrap{justify-self:end;max-width:30rem}
-}
-/* ---------- the weight ---------- */
-.split{
-  display:grid;gap:clamp(2.5rem,5vw,3.5rem);
-}
-.split__aside h2{max-width:17ch;margin-bottom:1.5rem}
-.split__aside .lede{max-width:27rem}
-.friction{border-bottom:1px solid var(--line)}
-.friction__item{
-  display:grid;gap:.4rem;
-  padding-block:1.6rem;
-  border-top:1px solid var(--line);
-}
-.friction__label{
-  font-family:var(--font-mono);
-  font-size:.6875rem;font-weight:500;
-  letter-spacing:.13em;text-transform:uppercase;
-  color:var(--accent);
-}
-.friction__item p{max-width:42ch;color:var(--ink-70)}
-.friction__item strong{font-weight:500;color:var(--ink)}
-.weight__close{
-  margin-top:clamp(2rem,4vw,2.75rem);
-  padding-left:1.25rem;
-  border-left:2px solid var(--accent);
-  font-family:var(--font-display);
-  font-size:clamp(1.25rem,1.1rem + .6vw,1.5rem);
-  line-height:1.4;letter-spacing:-.02em;
-  max-width:34ch;
-}
-@media (min-width:600px){
-  .friction__item{grid-template-columns:11.5rem 1fr;gap:1.5rem;align-items:baseline}
-}
-@media (min-width:960px){
-  .split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(3rem,7vw,7rem)}
-  .split__aside{position:sticky;top:7rem;align-self:start}
+  .hero__copy{padding-top:.4rem}
 }
 
-/* ---------- systems ---------- */
-.modules{margin-top:clamp(2.5rem,5vw,4rem);border-bottom:1px solid var(--line)}
-.module{
+/* ---------- instrument panel ---------- */
+.panel-wrap{width:100%;max-width:33rem;margin:0;justify-self:center}
+@media (min-width:1000px){.panel-wrap{justify-self:end;max-width:32rem}}
+.panel{
   position:relative;
-  display:grid;grid-template-columns:2.5rem 1fr;gap:.45rem .75rem;
-  padding-block:1.5rem;
-  border-top:1px solid var(--line);
+  background:linear-gradient(180deg,var(--navy-2),#0A1826);
+  border:1px solid var(--line-strong);
+  box-shadow:0 40px 90px -55px rgba(0,0,0,.95);
 }
-.module::after{
-  content:"";position:absolute;left:0;right:0;top:-1px;height:1px;
-  background:var(--accent);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .5s var(--ease);
+.panel::after{
+  content:"";position:absolute;inset:5px;pointer-events:none;
+  border:1px solid rgba(247,251,253,.05);
 }
-.module:hover::after{transform:scaleX(1)}
-.module__index{
-  padding-top:.3rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.1em;
-  color:var(--accent);
-  font-variant-numeric:tabular-nums;
-}
-.module__name{
-  font-size:1.25rem;font-weight:500;letter-spacing:-.02em;
-  line-height:1.3;
-  transition:color .25s;
-}
-.module:hover .module__name{color:var(--accent)}
-.module__outcome{
-  grid-column:2;
-  max-width:58ch;
-  font-size:.9375rem;line-height:1.65;
-  color:var(--ink-70);
-}
-@media (min-width:820px){
-  .module{
-    grid-template-columns:4rem minmax(9rem,14rem) 1fr;
-    gap:2rem;align-items:baseline;
-    padding-block:1.85rem;
-  }
-  .module__index{padding-top:.15rem}
-  .module__outcome{grid-column:3;max-width:60ch}
-}
-.modules__note{
-  max-width:60rem;
-  margin-top:1.5rem;
-  font-family:var(--font-mono);
-  font-size:.6563rem;line-height:1.8;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--ink-70);
-}
-
-/* ---------- proof ---------- */
-.proof{
-  background:var(--ink);
-  color:var(--bone);
-  border-color:var(--ink);
-}
-.proof .marker{color:var(--accent-light)}
-.proof h2{color:var(--bone)}
-.proof .lede{color:var(--bone-70)}
-.outcomes{
-  display:grid;
-  margin-top:clamp(2rem,4vw,3rem);
-  border-block:1px solid var(--bone-line);
-}
-.outcome{
-  padding-block:2rem;
-  border-bottom:1px solid var(--bone-line);
-}
-.outcome:last-child{border-bottom:0;padding-bottom:2.25rem}
-.outcome__tag{
-  margin-bottom:1.1rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;font-weight:400;
-  letter-spacing:.13em;text-transform:uppercase;
-  color:var(--accent-light);
-}
-.outcome__text{
-  max-width:30ch;
-  font-family:var(--font-display);
-  font-size:clamp(1.125rem,1rem + .5vw,1.375rem);
-  line-height:1.42;letter-spacing:-.015em;
-  color:var(--bone);
-}
-.facts{
-  display:grid;gap:1.5rem;
-  margin-top:clamp(2.5rem,5vw,3.5rem);
-  padding-top:2rem;
-  border-top:1px solid var(--bone-line);
-}
-.fact{
-  display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;align-items:baseline;
-}
-.fact__value{
-  font-family:var(--font-display);
-  font-size:clamp(1.875rem,1.5rem + 1.2vw,2.5rem);
-  line-height:1;letter-spacing:-.04em;
-  font-variant-numeric:tabular-nums;
-}
-.fact__label{
-  max-width:24ch;
-  font-family:var(--font-mono);
-  font-size:.625rem;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--bone-70);
-}
-.proof__note{
-  margin-top:2.5rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;line-height:1.8;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--bone-55);
-}
-@media (min-width:700px){
-  .facts{grid-template-columns:repeat(3,1fr);gap:2rem}
-  .fact{grid-template-columns:1fr;gap:.5rem}
-}
-@media (min-width:900px){
-  .outcomes{grid-template-columns:repeat(3,1fr)}
-  .outcome{
-    padding:2.5rem 2rem 2.5rem 0;
-    border-bottom:0;border-right:1px solid var(--bone-line);
-  }
-  .outcome + .outcome{padding-left:2rem}
-  .outcome:last-child{border-right:0;padding-bottom:2.5rem}
-  .outcome__text{max-width:28ch}
-}
-/* ---------- the install ---------- */
-.process{
-  display:grid;
-  margin-top:clamp(2.5rem,5vw,4rem);
-}
-.step{
-  position:relative;
-  padding-block:1.75rem 2.25rem;
-  border-top:1px solid var(--line-strong);
-}
-.step::before{
-  content:"";position:absolute;left:0;top:-3.5px;
-  width:7px;height:7px;background:var(--ink);
-}
-.step__meta{
-  display:flex;justify-content:space-between;gap:1rem;
-  margin-bottom:1.25rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--accent);
-}
-.step__time{color:var(--ink-70)}
-.step h3{
-  margin-bottom:.65rem;
-  font-size:1.5rem;font-weight:500;line-height:1.2;
-}
-.step p{max-width:38ch;font-size:.9375rem;line-height:1.65;color:var(--ink-70)}
-.run-note{
-  display:grid;gap:1.5rem;
-  margin-top:clamp(2.5rem,5vw,4rem);
-  padding:clamp(1.75rem,4vw,2.75rem);
-  background:var(--bone-2);
-  border:1px solid var(--line);
-  border-left:2px solid var(--accent);
-}
-.run-note__label{
+.panel__head{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:.85rem 1.1rem;
+  border-bottom:1px solid var(--line);
   font-family:var(--font-mono);
   font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);
+  color:var(--muted);
 }
-.run-note__body{
-  font-family:var(--font-display);
-  font-size:clamp(1.375rem,1.1rem + 1vw,1.875rem);
-  line-height:1.35;letter-spacing:-.025em;
-}
-.run-note__fine{
-  max-width:44ch;
-  margin-top:1rem;
-  font-size:.9375rem;line-height:1.65;color:var(--ink-70);
-}
-@media (min-width:640px){
-  .process{grid-template-columns:repeat(2,1fr);column-gap:2.5rem}
-}
-@media (min-width:900px){
-  .run-note{grid-template-columns:.55fr 1.45fr;gap:2.5rem;align-items:start}
-}
-@media (min-width:1000px){
-  .process{grid-template-columns:repeat(4,1fr);column-gap:2rem}
-}
-
-/* ---------- contact ---------- */
-.contact .split{align-items:start}
-.contact__aside{
-  margin:1.75rem 0 2rem;
-  padding-left:1rem;
-  border-left:2px solid var(--accent);
-  font-family:var(--font-display);
-  font-size:clamp(1.125rem,1rem + .4vw,1.25rem);
-  line-height:1.45;letter-spacing:-.015em;
-}
-.next-label{
-  margin-bottom:.25rem;
-  font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);
-}
-.contact__intro .next-label{margin-top:2.25rem}
-.next{margin-top:1rem;border-top:1px solid var(--line)}
-.next li{
-  display:grid;grid-template-columns:2rem 1fr;gap:1rem;
-  padding-block:.9rem;
+.led{display:inline-flex;align-items:center;gap:.45rem;color:var(--cyan);white-space:nowrap}
+.led::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px var(--cyan)}
+.panel__body{padding:.15rem 1.1rem 0}
+.readout{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+  padding-block:1rem;
   border-bottom:1px solid var(--line);
 }
-.next .mono{
-  font-size:.625rem;letter-spacing:.1em;
-  color:var(--accent);padding-top:.25rem;
+.readout:last-child{border-bottom:0}
+.readout__label{
+  max-width:10.5rem;
+  font-family:var(--font-mono);
+  font-size:.625rem;line-height:1.6;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);
 }
-.next p{font-size:.9375rem;line-height:1.55;color:var(--ink-70)}
-.contact__direct{
-  margin-top:1.75rem;
-  font-size:.875rem;color:var(--ink-70);
+.readout__value{
+  font-family:var(--font-display);
+  font-size:2rem;font-weight:500;line-height:1;letter-spacing:-.04em;
+  color:var(--cyan);font-variant-numeric:tabular-nums;text-align:right;
 }
-.contact__direct a{color:var(--ink)}
+.readout__value span{
+  display:block;margin-top:.4rem;
+  font-family:var(--font-mono);
+  font-size:.5rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.panel__chart{padding:.9rem 1.1rem 1rem;border-top:1px solid var(--line);color:var(--cyan)}
+.panel__chart svg{width:100%;height:auto}
+.panel__chart-foot{
+  display:flex;justify-content:space-between;gap:1rem;margin-top:.5rem;
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.panel__foot{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding:.7rem 1.1rem;
+  border-top:1px solid var(--line);
+  font-family:var(--font-mono);
+  font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.panel__caption{
+  margin-top:.7rem;
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+/* ---------- 01 / problem ---------- */
+.problem__hook{
+  max-width:27ch;
+  margin-bottom:clamp(2rem,4vw,3rem);
+  font-size:clamp(1.9rem,1.25rem + 2.9vw,3.4rem);
+  line-height:1.1;letter-spacing:-.038em;
+}
+.problem__hook span{
+  color:var(--cyan-ink);
+  font-variant-numeric:tabular-nums;
+}
+.problem__grid{display:grid;gap:clamp(2rem,4vw,3.5rem)}
+.problem__lead .lede{max-width:32rem}
+.rates{
+  display:grid;grid-template-columns:1fr 1fr;
+  margin-top:clamp(1.75rem,3.5vw,2.5rem);
+  border:1px solid var(--line-strong);
+}
+.rate{padding:clamp(1rem,2.5vw,1.35rem)}
+.rate + .rate{border-left:1px solid var(--line)}
+.rate__num{
+  font-family:var(--font-display);
+  font-size:clamp(1.75rem,1.4rem + 1.2vw,2.35rem);
+  font-weight:500;line-height:1;letter-spacing:-.04em;
+  font-variant-numeric:tabular-nums;
+}
+.rate__num span{
+  font-family:var(--font-mono);
+  font-size:.6875rem;font-weight:400;letter-spacing:.06em;
+  color:var(--muted-soft);
+}
+.rate__label{
+  margin-top:.55rem;
+  font-family:var(--font-mono);
+  font-size:.5625rem;line-height:1.7;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);
+}
+.rate + .rate .rate__num{color:var(--cyan-ink)}
+.leaks{border-top:1px solid var(--line-strong)}
+.leak{display:grid;gap:.45rem;padding-block:1.5rem;border-bottom:1px solid var(--line)}
+.leak__tag{
+  font-family:var(--font-mono);
+  font-size:.625rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cyan-ink);
+}
+.leak p{max-width:48ch;font-size:.9375rem;line-height:1.65;color:var(--muted)}
+.leak strong{font-weight:500;color:var(--ink)}
+.verdict{
+  max-width:34ch;
+  margin-top:clamp(2rem,4vw,3rem);
+  padding-left:1.15rem;
+  border-left:2px solid var(--cyan-ink);
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem,1.1rem + .8vw,1.75rem);
+  line-height:1.35;letter-spacing:-.025em;
+}
+@media (min-width:960px){
+  .problem__grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(3rem,7vw,6rem);align-items:start}
+}
 
-.form{
+/* ---------- 02 / system ---------- */
+.steps{display:grid;gap:1rem}
+.step{
   position:relative;
-  display:grid;gap:1.5rem;
-  padding-top:1.25rem;
+  padding:clamp(1.35rem,3vw,1.75rem);
+  background:linear-gradient(180deg,var(--navy-2),rgba(11,28,42,.35));
+  border:1px solid var(--line);
+  transition:border-color .3s var(--ease);
+}
+.step:hover{border-color:rgba(59,231,231,.45)}
+.step__meta{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  margin-bottom:1.15rem;
+  font-family:var(--font-mono);
+  font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
+}
+.step__meta strong{font-weight:500;color:var(--cyan)}
+.step h3{margin-bottom:.55rem;font-size:1.375rem;font-weight:500;line-height:1.2}
+.step p{font-size:.9375rem;line-height:1.65;color:var(--muted)}
+.step__path{
+  margin-top:1.2rem;padding-top:.85rem;
+  border-top:1px solid var(--line);
+  font-family:var(--font-mono);
+  font-size:.5625rem;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cyan);
+}
+.system-close{
+  max-width:36ch;
+  margin-top:clamp(2rem,4vw,2.75rem);
+  font-family:var(--font-display);
+  font-size:clamp(1.25rem,1.05rem + .8vw,1.6rem);
+  line-height:1.4;letter-spacing:-.02em;
+}
+.system-close span{color:var(--cyan)}
+@media (min-width:900px){
+  .steps{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+}
+
+/* ---------- 03 / install spec sheet ---------- */
+.specs{border-top:1px solid var(--line-strong)}
+.spec{
+  display:grid;grid-template-columns:2.75rem 1fr;gap:.4rem .85rem;
+  padding-block:1.35rem;
+  border-bottom:1px solid var(--line);
+}
+.spec__code{
+  padding-top:.3rem;
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.12em;
+  color:var(--cyan-ink);
+  font-variant-numeric:tabular-nums;
+}
+.spec h3{font-size:1.125rem;font-weight:500;line-height:1.3}
+.spec p{max-width:52ch;font-size:.9375rem;line-height:1.6;color:var(--muted)}
+.spec__replaces{
+  grid-column:2;
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.spec__replaces span{color:var(--ink)}
+.specs__note{
+  max-width:62rem;
+  margin-top:1.35rem;
+  font-family:var(--font-mono);
+  font-size:.625rem;line-height:1.8;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+@media (min-width:860px){
+  .spec{grid-template-columns:3.25rem minmax(10rem,14rem) 1fr 10.5rem;gap:2rem;align-items:baseline;padding-block:1.55rem}
+  .spec__code{padding-top:.15rem}
+  .spec__replaces{grid-column:4;text-align:right}
+}
+
+/* ---------- 04 / math ---------- */
+.math{display:grid;gap:clamp(2.5rem,5vw,4rem);align-items:start}
+.math__copy h2{max-width:20ch;margin-bottom:1.25rem}
+.math__copy .lede{max-width:31rem}
+.constants{display:grid;margin-top:clamp(1.75rem,3.5vw,2.5rem);border-top:1px solid var(--line-strong)}
+.constants li{
+  display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;align-items:baseline;
+  padding-block:.85rem;
+  border-bottom:1px solid var(--line);
+  font-family:var(--font-mono);
+  font-size:.5625rem;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);
+}
+.constants span:first-child{color:var(--cyan);font-size:.75rem;letter-spacing:.04em}
+.calc{
+  background:var(--white);color:var(--ink);
+  border:1px solid var(--line-strong);
+  padding:clamp(1.25rem,3vw,1.9rem);
+  box-shadow:0 40px 80px -50px rgba(0,0,0,.9);
+}
+.calc__head{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid rgba(8,20,31,.16);
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(8,20,31,.62);
+}
+.calc__head span:last-child{color:var(--cyan-ink)}
+.control{padding-block:1.3rem;border-bottom:1px solid rgba(8,20,31,.16)}
+.control__top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.85rem}
+.control label{font-size:.875rem;font-weight:500;letter-spacing:-.01em}
+.control output{
+  padding:.2rem .45rem;
+  border:1px solid rgba(8,20,31,.18);
+  background:rgba(8,20,31,.05);
+  font-family:var(--font-mono);
+  font-size:.8125rem;letter-spacing:.02em;
+  font-variant-numeric:tabular-nums;
+}
+input[type="range"]{
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:26px;margin:0;
+  background:transparent;cursor:pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  height:4px;
+  background:linear-gradient(90deg,var(--cyan-ink) var(--fill,40%),rgba(8,20,31,.16) var(--fill,40%));
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:12px;height:22px;margin-top:-9px;
+  background:var(--navy);border:1px solid var(--cyan-ink);border-radius:0;
+}
+input[type="range"]::-moz-range-track{height:4px;background:rgba(8,20,31,.16)}
+input[type="range"]::-moz-range-progress{height:4px;background:var(--cyan-ink)}
+input[type="range"]::-moz-range-thumb{
+  width:12px;height:22px;
+  background:var(--navy);border:1px solid var(--cyan-ink);border-radius:0;
+}
+.calc :focus-visible{outline-color:var(--cyan-ink)}
+.calc__result{padding:1.4rem 0 .2rem}
+.calc__result-label{
+  font-family:var(--font-mono);
+  font-size:.625rem;line-height:1.7;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(8,20,31,.66);
+}
+.calc__number{
+  margin:.5rem 0 .15rem;
+  font-family:var(--font-display);
+  font-size:clamp(2.1rem,1.5rem + 2.8vw,3.35rem);
+  font-weight:500;line-height:1;letter-spacing:-.045em;
+  font-variant-numeric:tabular-nums;
+  color:var(--ink);
+}
+.calc__sub{font-size:.8125rem;line-height:1.6;color:rgba(8,20,31,.62)}
+.calc__breakdown{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+  margin-top:1.15rem;padding-top:1.15rem;
+  border-top:1px solid rgba(8,20,31,.16);
+}
+.calc__breakdown dt{
+  font-family:var(--font-mono);
+  font-size:.5rem;line-height:1.7;letter-spacing:.11em;text-transform:uppercase;
+  color:rgba(8,20,31,.6);
+}
+.calc__breakdown dd{
+  margin:.3rem 0 0;
+  font-family:var(--font-display);
+  font-size:1.25rem;line-height:1;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;
+}
+.calc__note{
+  margin-top:1.15rem;padding-top:1rem;
+  border-top:1px solid rgba(8,20,31,.16);
+  font-family:var(--font-mono);
+  font-size:.5625rem;line-height:1.85;letter-spacing:.05em;
+  color:rgba(8,20,31,.6);
+}
+@media (min-width:960px){
+  .math{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(3rem,7vw,6rem)}
+}
+/* ---------- 05 / offer ---------- */
+.tiers{display:grid;gap:1.25rem}
+.tier{
+  --muted:rgba(247,251,253,.72);
+  --muted-soft:rgba(247,251,253,.56);
+  --line:rgba(247,251,253,.14);
+  --line-strong:rgba(247,251,253,.3);
+  display:flex;flex-direction:column;gap:1.15rem;
+  padding:clamp(1.5rem,3vw,2rem);
+  background:var(--navy);color:var(--white);
+  border:1px solid rgba(8,20,31,.22);
+}
+.tier--full{
+  border-color:var(--cyan-ink);
+  box-shadow:inset 0 3px 0 var(--cyan),0 34px 60px -50px rgba(8,20,31,.85);
+}
+.tier__top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.tier__eyebrow{
+  font-family:var(--font-mono);
+  font-size:.5625rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--cyan);
+}
+.tier__tag{
+  font-family:var(--font-mono);
+  font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.tier h3{font-size:1.5rem;font-weight:500}
+.tier__desc{font-size:.9375rem;line-height:1.6;color:var(--muted)}
+.tier__price{
+  padding-top:.15rem;
+  font-family:var(--font-display);
+  font-size:clamp(2rem,1.6rem + 1.2vw,2.6rem);
+  font-weight:500;line-height:1;letter-spacing:-.045em;
+}
+.tier__price span{
+  font-family:var(--font-mono);
+  font-size:.6875rem;font-weight:400;letter-spacing:.06em;
+  color:var(--muted-soft);
+}
+.tier__list{display:grid;gap:.55rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.tier__list li{position:relative;padding-left:1.3rem;font-size:.9375rem;line-height:1.55;color:var(--muted)}
+.tier__list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--cyan)}
+.tier__foot{
+  margin-top:auto;padding-top:1rem;
+  border-top:1px solid var(--line);
+  font-family:var(--font-mono);
+  font-size:.5rem;line-height:1.8;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.tier .button{margin-top:.15rem}
+.tier .button--ghost{color:var(--white);border-color:var(--line-strong)}
+.tier .button--ghost:hover{background:transparent;border-color:var(--cyan);color:var(--cyan)}
+.offer-note{
+  max-width:46ch;
+  margin-top:clamp(1.75rem,3.5vw,2.5rem);
+  padding-top:1.35rem;
+  border-top:1px solid var(--line-strong);
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,1rem + .5vw,1.4rem);
+  line-height:1.45;letter-spacing:-.02em;
+}
+.offer-note a{color:var(--cyan-ink);text-decoration-color:rgba(10,101,112,.4)}
+.offer-note a:hover{color:var(--ink)}
+@media (min-width:900px){
+  .tiers{grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch}
+}
+
+/* ---------- 06 / guarantee ---------- */
+.guarantee{
+  position:relative;
+  padding:clamp(1.5rem,4vw,2.75rem);
+  padding-left:clamp(1.5rem,4vw,2.75rem);
+  background:linear-gradient(180deg,var(--navy-2),var(--navy));
+  border:1px solid var(--line-strong);
+  overflow:hidden;
+}
+.guarantee::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cyan);
+}
+.guarantee::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+  border:1px solid rgba(59,231,231,.15);border-radius:50%;pointer-events:none;
+}
+.guarantee__label{
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--cyan);
+}
+.guarantee__text{
+  max-width:34ch;
+  margin-top:1.15rem;
+  font-family:var(--font-display);
+  font-size:clamp(1.4rem,1.1rem + 1.6vw,2.25rem);
+  line-height:1.3;letter-spacing:-.03em;
+}
+.guarantee__text strong{font-weight:500;color:var(--cyan)}
+.guarantee__close{
+  max-width:32ch;
+  margin-top:1.35rem;
+  font-family:var(--font-display);
+  font-size:clamp(1.05rem,1rem + .4vw,1.25rem);
+  line-height:1.5;letter-spacing:-.015em;
+  color:var(--muted);
+}
+.terms{
+  display:grid;gap:1rem;
+  margin-top:clamp(1.75rem,3.5vw,2.25rem);
+  padding-top:1.35rem;
+  border-top:1px solid var(--line);
+}
+.term dt{
+  font-family:var(--font-mono);
+  font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted-soft);
+}
+.term dd{margin:.35rem 0 0;font-size:.875rem;line-height:1.55;color:var(--muted)}
+@media (min-width:700px){.terms{grid-template-columns:repeat(3,1fr);gap:2rem}}
+
+/* ---------- 07 / faq ---------- */
+.faq{max-width:58rem;border-top:1px solid var(--line-strong)}
+.faq__item{border-bottom:1px solid var(--line)}
+.faq__item summary{
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;
+  padding:1.25rem 0;
+  cursor:pointer;list-style:none;
+  font-family:var(--font-display);
+  font-size:1.0625rem;font-weight:500;line-height:1.4;letter-spacing:-.012em;
+  transition:color .2s;
+}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary:hover{color:var(--cyan)}
+.faq__icon{position:relative;width:14px;height:14px;flex:none}
+.faq__icon::before,.faq__icon::after{
+  content:"";position:absolute;background:var(--cyan);transition:transform .25s var(--ease);
+}
+.faq__icon::before{left:0;top:6.25px;width:14px;height:1.5px}
+.faq__icon::after{left:6.25px;top:0;width:1.5px;height:14px}
+.faq__item[open] .faq__icon::after{transform:scaleY(0)}
+.faq__body{max-width:58ch;padding-bottom:1.35rem;font-size:.9375rem;line-height:1.7;color:var(--muted)}
+
+/* ---------- 08 / audit ---------- */
+.audit{display:grid;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.audit__copy h2{
+  max-width:15ch;
+  margin-bottom:1rem;
+  font-size:clamp(2.1rem,1.5rem + 2.7vw,3.5rem);
+}
+.audit__copy .lede{max-width:30rem}
+.next-label{
+  margin-bottom:.35rem;
+  font-family:var(--font-mono);
+  font-size:.5625rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--cyan-ink);
+}
+.audit__copy .next-label{margin-top:2rem}
+.next{margin-top:.75rem;border-top:1px solid var(--line-strong)}
+.next li{
+  display:grid;grid-template-columns:2rem 1fr;gap:.9rem;
+  padding-block:.85rem;
+  border-bottom:1px solid var(--line);
+}
+.next .mono{font-size:.5625rem;letter-spacing:.1em;color:var(--cyan-ink);padding-top:.3rem}
+.next p{font-size:.9375rem;line-height:1.55;color:var(--muted)}
+.audit__direct{margin-top:1.5rem;font-size:.875rem;color:var(--muted)}
+.audit__direct a{color:var(--ink)}
+.form{
+  display:grid;gap:1.35rem;
+  padding-top:1.15rem;
   border-top:1px solid var(--line-strong);
 }
 .form__head{
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;
   font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-70);
+  font-size:.5625rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
 }
-.form__row{display:grid;gap:1.5rem}
-.field{display:grid;gap:.45rem}
+.form__row{display:grid;gap:1.35rem}
+.field{display:grid;gap:.4rem}
 .field label{
   font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-70);
+  font-size:.5625rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);
 }
 .field :is(input,textarea){
   width:100%;
-  padding:.7rem 0 .8rem;
+  padding:.6rem 0 .75rem;
   background:transparent;
   border:0;border-bottom:1px solid var(--line-strong);border-radius:0;
-  font-family:var(--font-body);
   font-size:1rem;line-height:1.5;color:var(--ink);
   transition:border-color .2s;
 }
-.field :is(input,textarea)::placeholder{color:rgba(28,28,26,.62);opacity:1}
-.field :is(input,textarea):focus{border-bottom-color:var(--accent)}
-.field :is(input,textarea):focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.field textarea{min-height:7.5rem;resize:vertical}
-.form__actions{
-  display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;
-  margin-top:.25rem;
-}
+.field :is(input,textarea)::placeholder{color:rgba(8,20,31,.55);opacity:1}
+.field :is(input,textarea):focus{border-bottom-color:var(--cyan-ink)}
+.field textarea{min-height:7rem;resize:vertical}
+.form__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:.15rem}
 .form__fine{
-  max-width:24rem;
+  max-width:21rem;
   font-family:var(--font-mono);
-  font-size:.6875rem;line-height:1.75;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ink-70);
+  font-size:.625rem;line-height:1.75;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);
 }
 .form__status{
-  min-height:1.25rem;
+  min-height:1.2rem;
   font-family:var(--font-mono);
-  font-size:.6875rem;line-height:1.6;letter-spacing:.05em;
-  color:var(--accent);
+  font-size:.625rem;line-height:1.6;letter-spacing:.04em;
+  color:var(--cyan-ink);
 }
-@media (min-width:600px){
-  .form__row--two{grid-template-columns:1fr 1fr;gap:1.5rem 2rem}
-}
+@media (min-width:600px){.form__row--two{grid-template-columns:1fr 1fr;gap:1.35rem 2rem}}
 @media (min-width:960px){
-  .contact .split{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(3rem,8vw,7rem)}
+  .audit{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(3rem,8vw,6rem)}
 }
 
 /* ---------- footer ---------- */
-.site-footer{
-  border-top:1px solid var(--line);
-  padding-block:clamp(3rem,6vw,4.5rem) 1.75rem;
-}
-.footer__top{
-  display:flex;flex-wrap:wrap;gap:2.5rem;
-  justify-content:space-between;align-items:flex-start;
-}
-.footer__brand{max-width:24rem}
-.footer__brand p{
-  margin-top:1rem;
-  font-size:.875rem;line-height:1.7;color:var(--ink-70);
-}
-.footer__links{display:flex;flex-wrap:wrap;gap:.65rem 1.75rem}
+.site-footer{border-top:1px solid var(--line);padding-block:clamp(2.5rem,5vw,4rem) 1.5rem}
+.footer__top{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;align-items:flex-start}
+.footer__brand{max-width:23rem}
+.footer__brand p{margin-top:.9rem;font-size:.875rem;line-height:1.7;color:var(--muted)}
+.footer__links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
 .footer__links a{
-  font-size:.875rem;color:var(--ink-70);text-decoration:none;
-  transition:color .2s;
+  font-family:var(--font-mono);
+  font-size:.625rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .2s;
 }
-.footer__links a:hover{color:var(--accent)}
-.footer__direct{
-  display:flex;flex-direction:column;gap:.55rem;
-  font-size:.875rem;
-}
+.footer__links a:hover{color:var(--cyan)}
+.footer__direct{display:flex;flex-direction:column;gap:.5rem;font-size:.875rem}
 .footer__direct .next-label{margin-bottom:0}
 .footer__bottom{
   display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;
-  margin-top:clamp(2.5rem,5vw,3.5rem);
-  padding-top:1.25rem;
+  margin-top:clamp(2.25rem,4vw,3rem);
+  padding-top:1.1rem;
   border-top:1px solid var(--line);
   font-family:var(--font-mono);
-  font-size:.625rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-70);
+  font-size:.5625rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted-soft);
 }
-.footer__bottom p:last-child{color:var(--accent)}
+.footer__bottom p:last-child{color:var(--cyan)}
 @media (max-width:599px){
   .footer__links{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.5rem}
   .footer__bottom{flex-direction:column;align-items:flex-start;gap:.3rem}
@@ -706,28 +846,28 @@ h3{letter-spacing:-.02em}
   from{opacity:0}
   to{opacity:1}
 }
-@keyframes breathe{
-  0%,100%{opacity:.35}
+@keyframes signal{
+  0%,100%{opacity:.4}
   50%{opacity:1}
 }
 @media (prefers-reduced-motion:no-preference){
-  .hero__head>*,.hero__copy>*{opacity:0;animation:rise .85s var(--ease) forwards}
+  .hero__head>*,.hero__copy>*{opacity:0;animation:rise .8s var(--ease) forwards}
   .hero__head>*:nth-child(1){animation-delay:.05s}
-  .hero__head>*:nth-child(2){animation-delay:.13s}
-  .hero__copy>*:nth-child(1){animation-delay:.24s}
-  .hero__copy>*:nth-child(2){animation-delay:.32s}
-  .hero__copy>*:nth-child(3){animation-delay:.4s}
-  .plate-wrap{opacity:0;animation:fade 1.2s ease .28s forwards}
-  .pulse{animation:breathe 4s ease-in-out infinite}
+  .hero__head>*:nth-child(2){animation-delay:.12s}
+  .hero__copy>*:nth-child(1){animation-delay:.22s}
+  .hero__copy>*:nth-child(2){animation-delay:.3s}
+  .hero__copy>*:nth-child(3){animation-delay:.38s}
+  .panel-wrap{opacity:0;animation:fade 1.1s ease .25s forwards}
+  .led::before{animation:signal 4s ease-in-out infinite}
 }
 html.js [data-reveal]{
   opacity:0;transform:translateY(14px);
-  transition:opacity .75s var(--ease),transform .75s var(--ease);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
   transition-delay:var(--reveal-delay,0ms);
 }
 html.js [data-reveal].is-visible{opacity:1;transform:none}
-.outcomes [data-reveal]:nth-child(2){--reveal-delay:90ms}
-.outcomes [data-reveal]:nth-child(3){--reveal-delay:180ms}
+.steps [data-reveal]:nth-child(2){--reveal-delay:90ms}
+.steps [data-reveal]:nth-child(3){--reveal-delay:180ms}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{
@@ -737,8 +877,7 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
     scroll-behavior:auto !important;
   }
   html.js [data-reveal]{opacity:1;transform:none}
-  .hero__head>*,.hero__copy>*,.plate-wrap{opacity:1}
-  .module::after{display:none}
+  .hero__head>*,.hero__copy>*,.panel-wrap{opacity:1}
 }
 </style>
 </head>
@@ -749,27 +888,28 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
   <div class="container site-header__inner">
     <a class="logo" href="#top" aria-label="Solfera, back to top">
       <svg class="logo__mark" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="11" r="7.5" stroke="currentColor" stroke-width="1.3"/>
-        <path d="M2 15h20" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="12" cy="11" r="7.5" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M2 15h20" stroke="currentColor" stroke-width="1.4"/>
       </svg>
       <span class="logo__word">SOLFERA</span>
     </a>
 
     <nav class="nav" id="site-nav" aria-label="Primary" data-nav>
       <ul class="nav__list">
-        <li><a class="nav__link" href="#systems">Systems</a></li>
-        <li><a class="nav__link" href="#outcomes">Outcomes</a></li>
+        <li><a class="nav__link" href="#system">System</a></li>
         <li><a class="nav__link" href="#install">Install</a></li>
-        <li><a class="nav__link" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="#math">Math</a></li>
+        <li><a class="nav__link" href="#pricing">Pricing</a></li>
+        <li><a class="nav__link" href="#faq">FAQ</a></li>
       </ul>
-      <a class="button button--sm nav__cta" href="#contact">
-        Request an install
+      <a class="button button--sm nav__cta" href="#audit">
+        Book the audit
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M1.5 8h12M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.5"/></svg>
       </a>
     </nav>
 
-    <a class="button button--sm header__cta" href="#contact">
-      Request an install
+    <a class="button button--sm header__cta" href="#audit">
+      Book the audit
       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M1.5 8h12M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.5"/></svg>
     </a>
 
@@ -786,26 +926,26 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
       <div class="hero__head">
         <p class="eyebrow">
           <span class="eyebrow__dot" aria-hidden="true"></span>
-          Applied automation / contractors
+          Applied automation / local service businesses
         </p>
         <h1 class="hero__title" id="hero-title">
-          The work keeps moving.
-          <span class="hero__title-sub">Even when you step away.</span>
+          Your business shouldn’t stop when you put your <span>tools down.</span>
         </h1>
       </div>
 
       <div class="hero__copy">
         <p class="hero__sub">
-          Solfera builds and installs the working systems behind a contractor’s day: intake, dispatch, quoting, follow-up, reviews, scheduling. Calls get answered. Quotes go out. The calendar fills. You find out from the calendar.
+          We install automated operational systems inside your business—intake, quoting, follow-up, and scheduling—that run 24/7. Stop drowning in admin. Recover your lost revenue.
         </p>
         <div class="hero__actions">
-          <a class="button" href="#systems">
-            See the systems
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M8 1.5v12M3.5 9 8 13.5 12.5 9" stroke="currentColor" stroke-width="1.5"/></svg>
+          <a class="button" href="#audit">
+            Book Your Free Operations Audit
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M1.5 8h12M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.5"/></svg>
           </a>
+          <a class="button button--ghost" href="#install">See what gets installed</a>
         </div>
         <p class="hero__meta">
-          <span>3–40 trucks</span>
+          <span>Owner-operated / 3–40 trucks</span>
           <span aria-hidden="true">·</span>
           <span>Residential &amp; commercial trades</span>
           <span aria-hidden="true">·</span>
@@ -813,274 +953,434 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
         </p>
       </div>
 
-      <figure class="plate-wrap" aria-labelledby="plate-caption">
-        <div class="plate">
-          <svg class="plate__art" viewBox="0 0 560 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-            <defs>
-              <pattern id="rules" width="56" height="56" patternUnits="userSpaceOnUse">
-                <path d="M56 0H0v56" fill="none" stroke="#1C1C1A" stroke-opacity=".075" stroke-width="1"/>
-              </pattern>
-            </defs>
-            <rect width="560" height="700" fill="#E8E3D8"/>
-            <rect width="560" height="700" fill="url(#rules)"/>
-            <circle cx="414" cy="238" r="164" fill="#5B6B6A" fill-opacity=".1"/>
-            <circle cx="414" cy="238" r="164" fill="none" stroke="#5B6B6A" stroke-opacity=".5"/>
-            <circle cx="414" cy="238" r="2.5" fill="#1C1C1A" fill-opacity=".55"/>
-            <path d="M0 452h560" stroke="#1C1C1A" stroke-opacity=".38"/>
-            <path d="M0 466h560" stroke="#1C1C1A" stroke-opacity=".14"/>
-            <path d="M128 452v210" stroke="#1C1C1A" stroke-opacity=".3"/>
-            <circle cx="128" cy="646" r="7" fill="#1C1C1A" fill-opacity=".6"/>
-            <path d="M116 664h24" stroke="#1C1C1A" stroke-opacity=".35"/>
-          </svg>
-
-          <div class="plate__top" aria-hidden="true">
-            <span>Solfera / Field 01</span>
+      <figure class="panel-wrap" aria-labelledby="panel-caption">
+        <div class="panel">
+          <div class="panel__head">
+            <span>Solfera / ops panel 01</span>
+            <span class="led">System online</span>
+          </div>
+          <div class="panel__body">
+            <div class="readout">
+              <p class="readout__label">Missed calls recovered</p>
+              <p class="readout__value">27<span>this month</span></p>
+            </div>
+            <div class="readout">
+              <p class="readout__label">Jobs booked</p>
+              <p class="readout__value">41<span>this month</span></p>
+            </div>
+            <div class="readout">
+              <p class="readout__label">Quotes followed up</p>
+              <p class="readout__value">96<span>this month</span></p>
+            </div>
+          </div>
+          <div class="panel__chart">
+            <svg viewBox="0 0 300 56" aria-hidden="true" focusable="false">
+              <path d="M0 55.5H300" stroke="currentColor" stroke-opacity=".18"/>
+              <path d="M0 38H300M0 20H300" stroke="currentColor" stroke-opacity=".08"/>
+              <g fill="currentColor">
+                <rect x="4" y="38" width="10" height="17" opacity=".45"/>
+                <rect x="25" y="31" width="10" height="24" opacity=".45"/>
+                <rect x="46" y="42" width="10" height="13" opacity=".45"/>
+                <rect x="67" y="25" width="10" height="30" opacity=".55"/>
+                <rect x="88" y="34" width="10" height="21" opacity=".55"/>
+                <rect x="109" y="21" width="10" height="34" opacity=".55"/>
+                <rect x="130" y="27" width="10" height="28" opacity=".65"/>
+                <rect x="151" y="15" width="10" height="40" opacity=".65"/>
+                <rect x="172" y="23" width="10" height="32" opacity=".65"/>
+                <rect x="193" y="11" width="10" height="44" opacity=".8"/>
+                <rect x="214" y="17" width="10" height="38" opacity=".8"/>
+                <rect x="235" y="8" width="10" height="47" opacity=".85"/>
+                <rect x="256" y="13" width="10" height="42" opacity=".85"/>
+                <rect x="277" y="6" width="10" height="49"/>
+              </g>
+            </svg>
+            <p class="panel__chart-foot"><span>Recovered contacts / 14 days</span><span>27</span></p>
+          </div>
+          <div class="panel__foot">
+            <span>Last event 04:12 am</span>
             <span>No operator</span>
           </div>
-
-          <div class="plate__readout">
-            <div class="plate__readout-head">
-              <span>After-hours intake</span>
-              <span>22:14</span>
-            </div>
-            <dl class="plate__rows">
-              <div><dt>Calls missed</dt><dd>0</dd></div>
-              <div><dt>Qualified</dt><dd>3</dd></div>
-              <div><dt>Booked, morning</dt><dd>2</dd></div>
-            </dl>
-            <p class="plate__status"><span class="pulse" aria-hidden="true"></span>Running unattended</p>
-          </div>
         </div>
-        <figcaption class="plate__caption" id="plate-caption">Fig. 01 — After-hours intake. No operator.</figcaption>
+        <figcaption class="panel__caption" id="panel-caption">Fig. 01 — Panel view from an active install. No operator in the building.</figcaption>
       </figure>
     </div>
   </section>
-  <section class="section" id="weight" aria-labelledby="weight-title">
+
+  <section class="section section--paper" id="problem" aria-labelledby="problem-title">
     <div class="container">
-      <p class="marker" data-reveal>01 / The weight</p>
-      <div class="split">
-        <div class="split__aside" data-reveal>
-          <h2 id="weight-title">The work isn’t the weight. <span class="muted">The admin is.</span></h2>
+      <p class="marker" data-reveal>01 / The problem</p>
+      <h2 class="problem__hook" id="problem-title" data-reveal>
+        You are losing money because you are doing <span>$15/hour</span> admin work instead of <span>$150/hour</span> trade work.
+      </h2>
+
+      <div class="problem__grid">
+        <div class="problem__lead" data-reveal>
           <p class="lede">
-            You can run a crew. You can read a site. What you can’t do is answer the phone from a crawlspace, send the quote from the truck, chase the follow-up at nine at night, and still be home for dinner.
+            Nobody started a trade business to answer texts at nine at night. But the phone, the quote book, and the follow-up list don’t care that you’re on a ladder. Every hour spent on admin is an hour not spent on billable work—and the leak never shows up as a line item. It shows up as a thinner week.
           </p>
+          <div class="rates">
+            <div class="rate">
+              <p class="rate__num">$15<span>/hr</span></p>
+              <p class="rate__label">What the admin hour pays you</p>
+            </div>
+            <div class="rate">
+              <p class="rate__num">$150<span>/hr</span></p>
+              <p class="rate__label">What the trade hour earns you</p>
+            </div>
+          </div>
         </div>
 
-        <div class="split__main" data-reveal>
-          <ol class="friction">
-            <li class="friction__item">
-              <h3 class="friction__label">2:14 PM / The call</h3>
-              <p>A homeowner calls while you’re on a ladder. It rings out. By four o’clock they’ve hired the next name on the search results.</p>
-            </li>
-            <li class="friction__item">
-              <h3 class="friction__label">Day four / The quote</h3>
-              <p>The number was right. It just arrived after the other guy’s. Speed reads as competence, even when it shouldn’t.</p>
-            </li>
-            <li class="friction__item">
-              <h3 class="friction__label">9:40 PM / Second shift</h3>
-              <p>The day is over. You’re in the truck returning calls, confirming tomorrow, and answering a text that came in at noon.</p>
-            </li>
-            <li class="friction__item">
-              <h3 class="friction__label">Monday / The backlog</h3>
-              <p>Payroll cleared. Follow-ups didn’t. The week starts already owing you something.</p>
-            </li>
-          </ol>
-          <p class="weight__close">None of it is hard work. All of it is constant. Constant is what wears an owner down.</p>
+        <div class="leaks" data-reveal>
+          <article class="leak">
+            <h3 class="leak__tag">Leak 01 / The missed call</h3>
+            <p>A homeowner calls while you’re on a ladder. It rings out. By four o’clock they’ve hired the next name on the search results. <strong>No record, no callback, no job.</strong></p>
+          </article>
+          <article class="leak">
+            <h3 class="leak__tag">Leak 02 / The quiet quote</h3>
+            <p>The quote was right. It just went out and then sat there. Day four. Day nine. The customer assumes you lost interest, because you never said otherwise. <strong>The quote dies in silence.</strong></p>
+          </article>
+          <article class="leak">
+            <h3 class="leak__tag">Leak 03 / The invisible business</h3>
+            <p>The work was good. Nobody asked for a review. The next customer reads the three reviews you have and calls someone who has sixty. <strong>Retention never gets requested.</strong></p>
+          </article>
         </div>
       </div>
+
+      <p class="verdict" data-reveal>This isn’t a marketing problem; it’s an infrastructure problem. Marketing gets attention. Infrastructure keeps the work.</p>
     </div>
   </section>
-
-  <section class="section" id="systems" aria-labelledby="systems-title">
+  <section class="section" id="system" aria-labelledby="system-title">
     <div class="container">
-      <p class="marker" data-reveal>02 / The systems</p>
+      <p class="marker" data-reveal>02 / The system</p>
       <div class="section-head">
-        <h2 id="systems-title" data-reveal>Installed machinery. <span class="muted">Not advice.</span></h2>
+        <h2 id="system-title" data-reveal>Three systems. <span class="muted">No supervision.</span></h2>
         <p class="lede" data-reveal>
-          Seven modules, each built against your pricing, your service area, and your rules. Install one or install the whole floor. None of them need a reminder.
+          The same sequence runs every time a lead, a quote, or a finished job enters the business. Nobody has to remember it. Nobody has to be awake for it.
         </p>
       </div>
 
-      <ol class="modules" data-reveal>
-        <li class="module">
-          <span class="module__index">01</span>
-          <h3 class="module__name">Intake</h3>
-          <p class="module__outcome">Every enquiry is captured, qualified, and written into the calendar — call, form, text, or web. Nothing sits in an inbox.</p>
-        </li>
-        <li class="module">
-          <span class="module__index">02</span>
-          <h3 class="module__name">Dispatch</h3>
-          <p class="module__outcome">Jobs are assigned to the right truck with address, scope, and access notes before the day starts. No morning phone tree.</p>
-        </li>
-        <li class="module">
-          <span class="module__index">03</span>
-          <h3 class="module__name">Follow-up</h3>
-          <p class="module__outcome">Every open quote gets a written follow-up on a schedule until there is a decision. Silent quotes stop going silent.</p>
-        </li>
-        <li class="module">
-          <span class="module__index">04</span>
-          <h3 class="module__name">Quoting</h3>
-          <p class="module__outcome">Quotes are built from your pricing and sent within the hour. They are tracked until accepted, declined, or expired.</p>
-        </li>
-        <li class="module">
-          <span class="module__index">05</span>
-          <h3 class="module__name">Review management</h3>
-          <p class="module__outcome">Completed jobs request the review at the right moment. Anything under four stars reaches the office before it goes public.</p>
-        </li>
-        <li class="module">
-          <span class="module__index">06</span>
-          <h3 class="module__name">Missed-call recovery</h3>
-          <p class="module__outcome">A missed call gets a text back inside sixty seconds, and a booked slot when they reply. The lead stays with you.</p>
-        </li>
-        <li class="module">
-          <span class="module__index">07</span>
-          <h3 class="module__name">Scheduling</h3>
-          <p class="module__outcome">The calendar fills from your rules: service windows, drive time, crew skill, and weather. No double-booked mornings.</p>
-        </li>
-      </ol>
+      <div class="steps">
+        <article class="step" data-reveal>
+          <div class="step__meta"><span>Step 01</span><strong>T + 60 seconds</strong></div>
+          <h3>Intake</h3>
+          <p>A lead calls. You are busy. The system instantly texts them back with a booking link, qualifies the job, and writes the slot to your calendar.</p>
+          <p class="step__path">Missed call → text-back → booked slot</p>
+        </article>
+        <article class="step" data-reveal>
+          <div class="step__meta"><span>Step 02</span><strong>Day 2 / 5 / 10</strong></div>
+          <h3>Follow-up</h3>
+          <p>A quote is sent. The system follows up automatically on day 2, day 5, and day 10 until it is closed, declined, or expired.</p>
+          <p class="step__path">Quote out → timed chase → decision</p>
+        </article>
+        <article class="step" data-reveal>
+          <div class="step__meta"><span>Step 03</span><strong>Job complete</strong></div>
+          <h3>Retention</h3>
+          <p>The job is done. The system requests the review at the right moment. Your calendar fills for tomorrow. You do nothing.</p>
+          <p class="step__path">Invoice → review request → tomorrow booked</p>
+        </article>
+      </div>
 
-      <p class="modules__note">Seven modules. Installed alone or as one system. Each has a defined input, a defined handoff, and one job to do.</p>
+      <p class="system-close" data-reveal>You do nothing. <span>That is the point.</span></p>
     </div>
   </section>
-  <section class="section proof" id="outcomes" aria-labelledby="outcomes-title">
+
+  <section class="section section--paper" id="install" aria-labelledby="install-title">
     <div class="container">
-      <p class="marker" data-reveal>03 / Proof</p>
+      <p class="marker" data-reveal>03 / The install</p>
       <div class="section-head">
-        <h2 id="outcomes-title" data-reveal>What happened after the owner went home.</h2>
-        <p class="lede" data-reveal>Selected installs, described without adjectives. Client names withheld by agreement; the mechanics are exact.</p>
+        <h2 id="install-title" data-reveal>The systems a $10M company has, installed in your $1M company.</h2>
+        <p class="lede" data-reveal>
+          Five components, wired into the tools you already use. Each has a defined input, a defined handoff, and one job to do. Install one, or install the floor.
+        </p>
       </div>
 
-      <div class="outcomes">
-        <article class="outcome" data-reveal>
-          <h3 class="outcome__tag">After hours / HVAC · 6 trucks</h3>
-          <p class="outcome__text">Calls that arrive after six are answered, qualified, and booked. The owner sees them in the morning as scheduled work instead of voicemails.</p>
+      <div class="specs">
+        <article class="spec" data-reveal>
+          <p class="spec__code">V01</p>
+          <h3>Missed-Call Text-Back</h3>
+          <p>Every missed call gets a text inside sixty seconds, with a link to your calendar. The lead stays with you instead of the search results.</p>
+          <p class="spec__replaces">Replaces <span>Voicemail</span></p>
         </article>
-        <article class="outcome" data-reveal>
-          <h3 class="outcome__tag">Quoting / exteriors · 11 crews</h3>
-          <p class="outcome__text">Quotes leave within the hour, priced from the owner’s own sheet. Follow-ups go out on day two, six, and eleven until the customer decides.</p>
+        <article class="spec" data-reveal>
+          <p class="spec__code">V02</p>
+          <h3>Automated Quote Sequences</h3>
+          <p>Day 2, day 5, and day 10 follow-ups, written in your voice and tracked until the customer decides. No quote dies of silence.</p>
+          <p class="spec__replaces">Replaces <span>Manual chasing</span></p>
         </article>
-        <article class="outcome" data-reveal>
-          <h3 class="outcome__tag">Reviews / plumbing · 4 trucks</h3>
-          <p class="outcome__text">Every completed job gets one request, timed to the invoice. Anything under four stars reaches the office before it reaches the public.</p>
+        <article class="spec" data-reveal>
+          <p class="spec__code">V03</p>
+          <h3>Review Management</h3>
+          <p>Requests timed to the invoice. Anything under four stars reaches the office before it reaches the public.</p>
+          <p class="spec__replaces">Replaces <span>Asking later</span></p>
+        </article>
+        <article class="spec" data-reveal>
+          <p class="spec__code">V04</p>
+          <h3>Morning Dashboard (PDF)</h3>
+          <p>Yesterday’s calls, bookings, open quotes, and recovered revenue on one page, in your inbox at 6:00 a.m.</p>
+          <p class="spec__replaces">Replaces <span>Guessing</span></p>
+        </article>
+        <article class="spec" data-reveal>
+          <p class="spec__code">V05</p>
+          <h3>CRM Sync</h3>
+          <p>Every call, text, quote, and booking written to the CRM you already use. One record, no duplicate entry.</p>
+          <p class="spec__replaces">Replaces <span>Double entry</span></p>
         </article>
       </div>
 
-      <div class="facts" data-reveal>
-        <div class="fact">
-          <p class="fact__value">&lt; 60 s</p>
-          <p class="fact__label">First reply to a missed call</p>
-        </div>
-        <div class="fact">
-          <p class="fact__value">3</p>
-          <p class="fact__label">Timed follow-ups per open quote</p>
-        </div>
-        <div class="fact">
-          <p class="fact__value">0</p>
-          <p class="fact__label">Calls left in voicemail overnight</p>
-        </div>
-      </div>
-
-      <p class="proof__note" data-reveal>Drawn from system logs on active installs. Available on request.</p>
+      <p class="specs__note">Installed to your pricing, service windows, and crew rules. None of it asks your team to work differently; it changes what reaches them.</p>
     </div>
   </section>
 
-  <section class="section" id="install" aria-labelledby="install-title">
+  <section class="section" id="math" aria-labelledby="math-title">
+    <div class="container math">
+      <div class="math__copy">
+        <p class="marker" data-reveal>04 / The math</p>
+        <h2 id="math-title" data-reveal>Run the math before you believe the pitch.</h2>
+        <p class="lede" data-reveal>
+          Two numbers decide whether this is worth doing: how many calls you miss in a week, and what one job is worth. Move them and watch the leak.
+        </p>
+        <ul class="constants" data-reveal>
+          <li><span>&lt; 60 s</span><span>First reply to a missed call</span></li>
+          <li><span>3</span><span>Timed follow-ups per open quote</span></li>
+          <li><span>0</span><span>Voicemails left overnight</span></li>
+        </ul>
+      </div>
+
+      <div class="calc" role="group" aria-labelledby="calc-head" data-reveal>
+        <div class="calc__head" id="calc-head">
+          <span>Leak calculator / live</span>
+          <span>USD</span>
+        </div>
+
+        <div class="control">
+          <div class="control__top">
+            <label for="calls">Missed calls per week</label>
+            <output for="calls" data-calls-out>12</output>
+          </div>
+          <input id="calls" name="calls" type="range" min="1" max="60" step="1" value="12" data-calls>
+        </div>
+
+        <div class="control">
+          <div class="control__top">
+            <label for="job-value">Average job value</label>
+            <output for="job-value" data-job-out>$1,800</output>
+          </div>
+          <input id="job-value" name="job-value" type="range" min="150" max="15000" step="50" value="1800" data-job>
+        </div>
+
+        <div class="calc__result">
+          <p class="calc__result-label">Annual revenue leaking out of your business</p>
+          <p class="calc__number" data-leak>$1,123,200</p>
+          <p class="calc__sub" data-leak-sub>624 missed calls a year. At a 40% recovery, that is roughly 250 jobs.</p>
+          <dl class="calc__breakdown">
+            <div>
+              <dt>Missed calls a year</dt>
+              <dd data-annual>624</dd>
+            </div>
+            <div>
+              <dt>Recoverable at 40%</dt>
+              <dd data-recoverable>$450,000</dd>
+            </div>
+          </dl>
+        </div>
+
+        <p class="calc__note">Assumes every missed call is one lost job at full value, and that a working intake system recovers 40% of them. Both are deliberately conservative for trades with paid crews. Your audit replaces them with your own phone log.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section section--paper" id="pricing" aria-labelledby="pricing-title">
     <div class="container">
-      <p class="marker" data-reveal>04 / The install</p>
+      <p class="marker" data-reveal>05 / The offer</p>
       <div class="section-head">
-        <h2 id="install-title" data-reveal>Audit. Build. Install. Run.</h2>
-        <p class="lede" data-reveal>A short engagement with a long tail. Most of the work happens before the system speaks to a single customer.</p>
+        <h2 id="pricing-title" data-reveal>Two builds. <span class="muted">One decision.</span></h2>
+        <p class="lede" data-reveal>
+          Scoped at the audit, installed in weeks, priced monthly. No ad spend, no seats, no strategy deck. Just the operational capacity you were going to hire for.
+        </p>
       </div>
 
-      <ol class="process" data-reveal>
-        <li class="step">
-          <div class="step__meta"><span>01</span><span class="step__time">Week 1</span></div>
-          <h3>Audit</h3>
-          <p>We read the phone log, the inbox, the quote book, and the calendar. We find where work leaks and put an hourly number on it.</p>
-        </li>
-        <li class="step">
-          <div class="step__meta"><span>02</span><span class="step__time">Weeks 2–4</span></div>
-          <h3>Build</h3>
-          <p>We configure each module around your pricing, service windows, crew skills, and the way you actually talk to customers. Then we test it on live enquiries.</p>
-        </li>
-        <li class="step">
-          <div class="step__meta"><span>03</span><span class="step__time">One day</span></div>
-          <h3>Install</h3>
-          <p>We connect the number, calendar, CRM, and review flow. Your team gets a one-page runbook. No training course, no new dashboard to babysit.</p>
-        </li>
-        <li class="step">
-          <div class="step__meta"><span>04</span><span class="step__time">Ongoing</span></div>
-          <h3>Run</h3>
-          <p>The system answers, routes, follows up, and books. We check it monthly and correct drift. You don’t call us to keep it working.</p>
-        </li>
-      </ol>
+      <div class="tiers">
+        <article class="tier" data-reveal>
+          <div class="tier__top">
+            <p class="tier__eyebrow">Tier 01</p>
+            <p class="tier__tag">Core install</p>
+          </div>
+          <h3>The Foundation</h3>
+          <p class="tier__desc">For the owner who needs the phone answered and the quotes closed before the week ends.</p>
+          <p class="tier__price">$X<span>/mo</span></p>
+          <ul class="tier__list">
+            <li>Missed-call text-back and recovery</li>
+            <li>Automated quote sequences on day 2, 5, and 10</li>
+            <li>Morning dashboard (PDF) at 6:00 a.m.</li>
+            <li>CRM sync with the system you already run</li>
+            <li>Monthly drift check and rule updates</li>
+          </ul>
+          <p class="tier__foot">Final price set at the audit. Month to month.</p>
+          <a class="button button--ghost" href="#audit">Book the audit</a>
+        </article>
 
-      <aside class="run-note" data-reveal aria-label="How the system runs">
-        <p class="run-note__label">The point</p>
-        <div>
-          <p class="run-note__body">At 2:14 in the morning, nobody at Solfera is awake. The system answers anyway.</p>
-          <p class="run-note__fine">That is the difference between a system and a retainer. You’re not buying our hours. You’re buying back yours.</p>
-        </div>
-      </aside>
+        <article class="tier tier--full" data-reveal>
+          <div class="tier__top">
+            <p class="tier__eyebrow">Tier 02</p>
+            <p class="tier__tag">Full install</p>
+          </div>
+          <h3>The Full Engine</h3>
+          <p class="tier__desc">For operations that need every door wired: intake, follow-up, reviews, and the channels between them.</p>
+          <p class="tier__price">$X<span>/mo</span></p>
+          <ul class="tier__list">
+            <li>Everything in The Foundation</li>
+            <li>Review generation and low-score routing</li>
+            <li>Social DM intake</li>
+            <li>SMS and voice options</li>
+            <li>Scheduling rules by crew, service window, and drive time</li>
+            <li>Priority response on drift and changes</li>
+          </ul>
+          <p class="tier__foot">Final price set at the audit. Month to month.</p>
+          <a class="button" href="#audit">Book the audit</a>
+        </article>
+      </div>
+
+      <p class="offer-note" data-reveal>We only install this system if the math makes sense for your business. <a class="link" href="#audit">Book an audit to find out.</a></p>
     </div>
   </section>
-  <section class="section contact" id="contact" aria-labelledby="contact-title">
+
+  <section class="section" id="guarantee" aria-labelledby="guarantee-title">
     <div class="container">
-      <p class="marker" data-reveal>05 / Contact</p>
-      <div class="split">
-        <div class="contact__intro" data-reveal>
-          <h2 id="contact-title">Request an install.</h2>
-          <p class="contact__aside">Attention is rented. Capacity is installed.</p>
-          <p class="lede">Tell us what’s slipping. We’ll reply with a straight read: which modules would carry it, what they’d replace, and what the install costs.</p>
+      <p class="marker" data-reveal>06 / The guarantee</p>
+      <div class="section-head">
+        <h2 id="guarantee-title" data-reveal>The risk sits with us.</h2>
+        <p class="lede" data-reveal>You shouldn’t have to bet on a system before you’ve seen it work inside your own operation.</p>
+      </div>
 
-          <p class="next-label">What happens next</p>
-          <ol class="next">
-            <li><span class="mono">01</span><p>A twenty-minute call about how the business actually runs.</p></li>
-            <li><span class="mono">02</span><p>A written scope with modules, timeline, and a fixed price.</p></li>
-            <li><span class="mono">03</span><p>An install date. Or a clear no.</p></li>
-          </ol>
+      <div class="guarantee" data-reveal>
+        <p class="guarantee__label">30-day performance term</p>
+        <p class="guarantee__text">
+          If the system doesn’t recover at least the cost of your retainer in booked jobs within the first 30 days, <strong>you don’t pay for month two.</strong>
+        </p>
+        <p class="guarantee__close">We take the risk, you take the capacity.</p>
 
-          <p class="contact__direct">Prefer to write directly? <a class="link" href="mailto:hello@solfera.co">hello@solfera.co</a></p>
+        <dl class="terms">
+          <div class="term">
+            <dt>The window</dt>
+            <dd>30 days from the day the system goes live.</dd>
+          </div>
+          <div class="term">
+            <dt>The bar</dt>
+            <dd>Your monthly retainer, measured in booked jobs.</dd>
+          </div>
+          <div class="term">
+            <dt>If it misses</dt>
+            <dd>Month two costs nothing. We keep working.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <p class="marker" data-reveal>07 / Questions</p>
+      <div class="section-head">
+        <h2 id="faq-title" data-reveal>Straight answers.</h2>
+        <p class="lede" data-reveal>If yours isn’t here, the audit is the fastest place to get it answered with your numbers on the table.</p>
+      </div>
+
+      <div class="faq" data-reveal>
+        <details class="faq__item">
+          <summary>Is this just a chatbot?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__body">
+            <p>No. A chatbot answers questions. This is an operational system: it captures the lead, books the slot, follows the quote, requests the review, and writes the record to your CRM. The conversation is one small part of the machinery.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Do I have to change my CRM?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__body">
+            <p>No. We connect to the CRM you already use—Jobber, ServiceTitan, Housecall Pro, HubSpot, or a spreadsheet if that is what runs the office. Your records stay in your system, owned by you.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>How long does the install take?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__body">
+            <p>Most installs go live in two to three weeks. One week to read the operation, one to build and test against live enquiries, one day to switch the numbers over. The system is tested on real calls before it handles all of them.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>We already have someone answering the phone.<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__body">
+            <p>Good. The system handles what happens when they are on another line, after hours, or on the weekend. It also removes the chasing and data entry they should not be doing in the first place.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>What does the audit cost?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__body">
+            <p>Nothing. The audit is a working session, not a sales call. You leave with the leaks quantified in dollars, whether or not we install anything.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>What happens after month one?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__body">
+            <p>The system keeps running. We check it monthly, correct drift, and adjust the rules as your season and crew change. You do not manage it, and you do not call us to keep it working.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper" id="audit" aria-labelledby="audit-title">
+    <div class="container audit">
+      <div class="audit__copy">
+        <p class="marker" data-reveal>08 / The audit</p>
+        <h2 id="audit-title" data-reveal>Stop drowning in admin.</h2>
+        <p class="lede" data-reveal>
+          Book the audit. Twenty minutes on how the business actually runs, then a written read on what is leaking, what it costs, and which systems would carry it.
+        </p>
+
+        <p class="next-label" data-reveal>What happens next</p>
+        <ol class="next" data-reveal>
+          <li><span class="mono">01</span><p>A twenty-minute call about your phone log, quote book, and calendar.</p></li>
+          <li><span class="mono">02</span><p>A written scope: modules, timeline, and the monthly number.</p></li>
+          <li><span class="mono">03</span><p>An install date. Or a clear no, with the math attached.</p></li>
+        </ol>
+
+        <p class="audit__direct" data-reveal>Prefer to write directly? <a class="link" href="mailto:hello@solfera.co">hello@solfera.co</a></p>
+      </div>
+
+      <form class="form" data-form>
+        <div class="form__head">
+          <p>Operations audit request / 01</p>
+          <p>All fields required</p>
         </div>
 
-        <form class="form" data-form>
-          <div class="form__head">
-            <p>Install request / 01</p>
-            <p>All fields required</p>
-          </div>
-
-          <div class="form__row form__row--two">
-            <div class="field">
-              <label for="field-name">Name</label>
-              <input id="field-name" name="name" type="text" autocomplete="name" placeholder="First and last" required>
-            </div>
-            <div class="field">
-              <label for="field-business">Business</label>
-              <input id="field-business" name="business" type="text" autocomplete="organization" placeholder="Company name" required>
-            </div>
-          </div>
-
+        <div class="form__row form__row--two">
           <div class="field">
-            <label for="field-contact">Phone or email</label>
-            <input id="field-contact" name="contact" type="text" autocomplete="tel" placeholder="How to reach you" required>
+            <label for="field-name">Name</label>
+            <input id="field-name" name="name" type="text" autocomplete="name" placeholder="First and last" required>
           </div>
-
           <div class="field">
-            <label for="field-message">What’s slipping</label>
-            <textarea id="field-message" name="message" rows="4" placeholder="Missed calls after four, quotes sitting for a week, reviews we never ask for." required></textarea>
+            <label for="field-business">Business</label>
+            <input id="field-business" name="business" type="text" autocomplete="organization" placeholder="Company name" required>
           </div>
+        </div>
 
-          <div class="form__actions">
-            <button class="button" type="submit">
-              Request an install
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M1.5 8h12M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </button>
-            <p class="form__fine">No sequence, no newsletter. A person replies, usually within one business day.</p>
-          </div>
+        <div class="field">
+          <label for="field-contact">Phone or email</label>
+          <input id="field-contact" name="contact" type="text" autocomplete="tel" placeholder="How to reach you" required>
+        </div>
 
-          <p class="form__status" role="status" aria-live="polite" data-form-status></p>
-        </form>
-      </div>
+        <div class="field">
+          <label for="field-message">What’s slipping</label>
+          <textarea id="field-message" name="message" rows="4" placeholder="Calls after four, quotes sitting for a week, reviews we never ask for." required></textarea>
+        </div>
+
+        <div class="form__actions">
+          <button class="button" type="submit">
+            Book the audit
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M1.5 8h12M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <p class="form__fine">No sequence, no newsletter. A person replies, usually within one business day.</p>
+        </div>
+
+        <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+      </form>
     </div>
   </section>
 </main>
@@ -1091,21 +1391,22 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
       <div class="footer__brand">
         <a class="logo" href="#top" aria-label="Solfera, back to top">
           <svg class="logo__mark" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="11" r="7.5" stroke="currentColor" stroke-width="1.3"/>
-            <path d="M2 15h20" stroke="currentColor" stroke-width="1.3"/>
+            <circle cx="12" cy="11" r="7.5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M2 15h20" stroke="currentColor" stroke-width="1.4"/>
           </svg>
           <span class="logo__word">SOLFERA</span>
         </a>
-        <p>An applied automation company. We build the systems that carry the admin inside contractor businesses.</p>
+        <p>An applied automation company. We install the operational systems that carry the admin inside local service businesses.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
         <ul class="footer__links">
-          <li><a href="#weight">The weight</a></li>
-          <li><a href="#systems">Systems</a></li>
-          <li><a href="#outcomes">Outcomes</a></li>
+          <li><a href="#problem">The problem</a></li>
+          <li><a href="#system">System</a></li>
           <li><a href="#install">Install</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#math">Math</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
 
@@ -1129,7 +1430,7 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
   const header = document.querySelector('[data-header]');
   const toggle = document.querySelector('[data-nav-toggle]');
   const nav = document.querySelector('[data-nav]');
-  const mobile = window.matchMedia('(max-width: 899px)');
+  const mobile = window.matchMedia('(max-width: 999px)');
 
   const setNav = (open) => {
     if (!toggle || !nav) return;
@@ -1181,6 +1482,50 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
+  const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  const count = new Intl.NumberFormat('en-US');
+  const callsInput = document.querySelector('[data-calls]');
+  const jobInput = document.querySelector('[data-job]');
+  const callsOut = document.querySelector('[data-calls-out]');
+  const jobOut = document.querySelector('[data-job-out]');
+  const leakOut = document.querySelector('[data-leak]');
+  const leakSub = document.querySelector('[data-leak-sub]');
+  const annualOut = document.querySelector('[data-annual]');
+  const recoverOut = document.querySelector('[data-recoverable]');
+
+  const paintFill = (el) => {
+    const min = Number(el.min);
+    const max = Number(el.max);
+    const pct = ((Number(el.value) - min) / (max - min)) * 100;
+    el.style.setProperty('--fill', pct.toFixed(1) + '%');
+  };
+
+  const paintMath = () => {
+    if (!callsInput || !jobInput) return;
+    const calls = Number(callsInput.value);
+    const job = Number(jobInput.value);
+    const annual = calls * 52;
+    const recoveredJobs = Math.round(annual * 0.4);
+    const recoverable = recoveredJobs * job;
+
+    if (callsOut) callsOut.textContent = count.format(calls);
+    if (jobOut) jobOut.textContent = money.format(job);
+    if (leakOut) leakOut.textContent = money.format(annual * job);
+    if (annualOut) annualOut.textContent = count.format(annual);
+    if (recoverOut) recoverOut.textContent = money.format(recoverable);
+    if (leakSub) {
+      leakSub.textContent = count.format(annual) + ' missed calls a year. At a 40% recovery, that is roughly ' + count.format(recoveredJobs) + ' jobs.';
+    }
+
+    paintFill(callsInput);
+    paintFill(jobInput);
+  };
+
+  [callsInput, jobInput].forEach((input) => {
+    input?.addEventListener('input', paintMath);
+  });
+  paintMath();
+
   const form = document.querySelector('[data-form]');
   const status = document.querySelector('[data-form-status]');
 
@@ -1191,7 +1536,7 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
       return;
     }
     if (status) {
-      status.textContent = 'Request received. A person will reply, usually within one business day.';
+      status.textContent = 'Request received. A person will reply, usually within one business day, with audit times.';
     }
     form.reset();
   });
@@ -1199,4 +1544,3 @@ html.js [data-reveal].is-visible{opacity:1;transform:none}
 </script>
 </body>
 </html>
-
